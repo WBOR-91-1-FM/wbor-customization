@@ -1,0 +1,46 @@
+<style>
+    .hidden {
+        display: none;
+        overflow: hidden;
+    }
+</style>
+
+<script>
+    function visCtrl(...args) {
+        for (let i = 0; i < args.length; i += 2) {
+            const action = args[i];
+            const elementId = args[i + 1];
+            const element = document.getElementById(elementId);
+
+            if (!element) {
+                console.error('Element with id ' + elementId + ' not found.');
+                continue;
+            }
+
+            switch (action) {
+                case 'hide':
+                    element.style.maxHeight = '0';
+                    element.classList.add('hidden');
+                    break;
+
+                case 'show':
+                    element.style.maxHeight = '';
+                    element.classList.remove('hidden');
+                    break;
+
+                case 'toggle':
+                    if (element.classList.contains('hidden')) {
+                        element.style.maxHeight = '';
+                        element.classList.remove('hidden');
+                    } else {
+                        element.style.maxHeight = '0';
+                        element.classList.add('hidden');
+                    }
+                    break;
+
+                default:
+                    console.error('Invalid action: ' + action);
+            }
+        }
+    }
+</script>

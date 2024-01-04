@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --bs-root-font-size: 16px;
+}
+
+/* Stream Player */
+
+/* Set up the player to display as a centered flex container */
+.my-2 {
+    display: none;
+}
+
+/* not used so disable to prevent potential conflicts */
+.radio-player-widget {
+    display: flex;
+    background: #171717;
+    border-radius: 0.5rem;
+    padding: 6px;
+}
+
+/* Give the title and artist padding and matching font color to rest of website */
+.now-playing-main {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    color: #EEEEEE;
+    min-width: 20vi;
+}
+
+/* Hide the volume control and stream selector (in the case we ever get more than one stream) */
+.radio-control-volume.d-flex.align-items-center,
+.radio-control-select-stream {
+    display: none !important;
+}
+
+/* Ensure album art is a standard size, fills this space, and is cropped to 1:1 aspect ratio (square) */
+.now-playing-art {
+    width: 85px;
+    height: 85px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.radio-player-widget .now-playing-details .now-playing-art img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover !important;
+    width: 100% !important;
+    border-radius: 0.5rem;
+}
+
+.radio-player-widget .now-playing-details .now-playing-art {
+    padding-right: 0rem;
+}
+
+/* Ensure play button is sized correctly*/
+.radio-player-widget .radio-controls .radio-control-play-button {
+    margin-right: 0rem;
+}
+
+.btn {
+    --bs-btn-border-width: none;
+}
+
+/* Enlarge the play button and make it the same color as the rest of the site's fonts */
+.radio-controls .icon {
+    font-size: 50px;
+    fill: #EEE !important;
+}
+
+/* Make it so that if text is going to overflow it is handled properly */
+.radio-player-widget .now-playing-details .now-playing-title,
+.radio-player-widget .now-playing-details .now-playing-artist {
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.025rem;
+}
+
+.radio-player-widget .now-playing-details .now-playing-title {
+    font-weight: bolder;
+}
+
+.radio-player-widget .now-playing-details {
+    max-width: 81vw;
+    /* making it compatible even with the original iPhone resolution */
+}
+
+h4 {
+    font-size: 1rem !important;
+}
+
+h5 {
+    font-size: 0.9rem !important;
+}
+
+/* Grow and shrink the song title/artist based on their length with respect to the browser width */
+#station-nowplaying {
+    display: flex;
+    justify-content: center;
+}
+
+html body.page-minimal.page-station-public-player-embed.station-wbor.embed.vsc-initialized {
+    flex-grow: 1;
+}
+
+
+
+/* Recently Played Songs Section */
+
+#station-history {
+    font-family: 'Inter', sans-serif;
+    max-width: 100%;
+}
+
+/* Hide play order numbers */
+.order {
+    display: none !important
+}
+
+/* Make it so that album covers are not clickable */
+.album-art.me-3 {
+    pointer-events: none
+}
+
+/* Ensure that recently played song album covers are still 1:1 */
+.song .album_art {
+    aspect-ratio: 1 / 1;
+    object-fit: cover !important;
+    border-radius: 0.5rem !important;
+}
+
+/* Make it so that if text is going to overflow it is handled properly */
+.name {
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+
+strong,
+span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #EEEEEE !important;
+}
+
+strong {
+    font-size: 1rem;
+}
+
+span {
+    font-size: 0.9rem;
+}
+
+#station-history .song .name {
+    width: 100%;
+}
+
+div.song:nth-child(n)>small:nth-child(n) {
+    color: #A8A8A8 !important;
+    font-size: .8rem;
+}
+
+#song_history {
+    display: flex;
+    justify-content: center;
+}

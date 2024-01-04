@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <style>
+        div.fixed {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #EEEEEE;
+            cursor: pointer;
+            padding: 15px 15px;
+            border-radius: 50%;
+            font-size: 1rem;
+            scroll-behavior: smooth;
+            transition: all 1s;
+
+        }
+
+        .svgtop {
+            fill: #0E1111;
+        }
+
+        .hide {
+            opacity: 0;
+            right: -100%
+        }
+
+        .show {
+            opacity: 1;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div onclick="topFunction()" id="backtotop" class="fixed hide">
+        <svg class="svgtop" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="none" d="M0 0h24v24H0V0z" />
+            <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
+        </svg>
+    </div>
+
+    <script>
+        backtotop = document.getElementById("backtotop");
+
+        var ScrollFunc = function () {
+            var y = window.scrollY;
+            if (y >= 400) {
+                backtotop.className = "fixed show"
+            } else {
+                backtotop.className = "fixed hide"
+            }
+        };
+
+        window.addEventListener("scroll", ScrollFunc);
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

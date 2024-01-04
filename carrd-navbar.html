@@ -1,0 +1,256 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        letter-spacing: 0.025rem;
+    }
+
+    .logo {
+        height: 36px;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+        overflow: hidden;
+        background-color: transparent;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar a {
+        color: #EEEEEE;
+        padding: 14px 16px;
+        float: left;
+        text-decoration: none;
+    }
+
+    /* Hamburger Menu Styles */
+    .navbar .hamburger {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Submenu Styles */
+    .submenu {
+        float: left;
+        overflow: hidden;
+    }
+
+    .submenu .caretbutton {
+        background-color: inherit;
+        color: #EEEEEE;
+        padding: 12px 16px;
+        /* padding 12px adjusted for Carrd*/
+        margin: 0;
+        border: none;
+        outline: none;
+        font-size: inherit;
+        font-family: inherit;
+    }
+
+    .submenu-links {
+        background-color: #333435;
+        min-width: 160px;
+        display: none;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .submenu-links a {
+        color: #EEEEEE;
+        padding: 14px 16px;
+        display: block;
+        float: none;
+        text-decoration: none;
+        text-align: left;
+    }
+
+    .submenu:hover .submenu-links {
+        display: block;
+    }
+
+    /* Media Queries (device specific styling) */
+
+    /* Desktop Only */
+    @media screen and (min-width: 600px) {
+
+        .navbar a:hover,
+        .submenu:hover .caretbutton {
+            background-color: #515253;
+        }
+
+        #navbar {
+            display: flex;
+        }
+
+        #navMenu {
+            margin: 0 auto;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a {
+            display: flex;
+            height: 100%;
+            align-items: center;
+        }
+
+        .submenu,
+        .caretbutton {
+            height: 100%;
+        }
+    }
+
+    /* Mobile Only */
+    @media screen and (max-width: 600px) {
+
+        .navbar a:not(:first-child),
+        .submenu .caretbutton {
+            display: none;
+        }
+
+        .submenu a:first-child {
+            display: none;
+        }
+
+        .navbar a.hamburger {
+            float: right;
+            display: flex;
+            align-items: center;
+            height: 67px
+        }
+
+        .navbar.responsive {
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .navbar.responsive .hamburger {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            height: 67px
+        }
+
+        .navbar.responsive a {
+            display: block;
+            float: none;
+            text-align: left;
+        }
+
+        #navMenu>a:nth-child(1) {
+            height: 67px;
+        }
+
+        #navMenu>a:nth-child(2),
+        #navMenu>a:nth-child(3),
+        #navMenu>a:nth-child(5),
+        .submenu-links>a:nth-child(n) {
+            text-align: center;
+        }
+
+        .submenu-links>a:nth-child(n) {
+            background-color: #202020 !important;
+        }
+
+        .navbar.responsive .submenu {
+            float: none;
+        }
+
+        .navbar.responsive .submenu .caretbutton {
+            display: block;
+            width: 100%;
+            background-color: #18191a;
+            cursor: pointer;
+        }
+
+        .navbar.responsive .submenu-links {
+            position: relative;
+        }
+
+        div#navMenu.navbar.responsive a {
+            background-color: #18191a;
+        }
+    }
+</style>
+
+<div id="navMenu" class="navbar">
+    <a href="/#"><img src="https://wbor.org/assets/images/logo.png?v=1e210820" class="logo"></a>
+    <a href="https://spinitron.com/WBOR/" target="_blank" rel="noopener noreferrer">playlists</a>
+    <a href="/#contact">contact</a>
+    <div class="submenu">
+        <button class="caretbutton">about <i class="fa fa-caret-down"></i></button>
+
+        <div class="submenu-links">
+            <a href="/#about">station</a>
+            <a href="/#history">history</a>
+            <a href="/#alumni">alumni</a>
+            <a href="/#station-tour">studio</a>
+            <a href="https://merch.wbor.org/" target=”_blank” rel="noopener noreferrer me">merch</a>
+        </div>
+    </div>
+    <a href="/#zine" style="font-family: 'Courier New', Courier, monospace;font-weight: 600;">FYS</a>
+    <a class="hamburger"><i class="fa fa-bars"></i></a>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var nav = document.getElementById("navMenu");
+        var hamburger = document.querySelector(".hamburger");
+        var navbarLinks = document.querySelectorAll(".navbar a:not(.hamburger)");
+        var submenuButtons = document.querySelectorAll(".submenu .caretbutton");
+
+        // Toggle the responsive class on the navbar
+        function toggleResponsiveNav() {
+            nav.classList.toggle("responsive");
+        }
+
+        // Event handler for hamburger menu click
+        hamburger.addEventListener("click", function (event) {
+            event.preventDefault();
+            toggleResponsiveNav();
+        });
+
+        // Event handler for navbar link clicks - if mobile navbar and click a link, close menu after clicking
+        navbarLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
+                if (nav.classList.contains("responsive")) {
+                    toggleResponsiveNav();
+                }
+                visCtrl(
+                    "hide",
+                    "recentlyplayed",
+                    "hide",
+                    "faq",
+                    "hide",
+                    "listening-methods"
+                );
+            });
+        });
+
+        // Event handler for submenu button clicks - if mobile navbar and click a submenu link, open submenu
+        submenuButtons.forEach(function (button) {
+            button.addEventListener("click", function (event) {
+                if (nav.classList.contains("responsive")) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    button.parentNode.querySelector(".submenu-links").classList.toggle("show");
+                }
+            });
+        });
+
+        // Close the responsive menu when clicking outside the navbar
+        document.addEventListener("click", function (event) {
+            if (!nav.contains(event.target) && nav.classList.contains("responsive")) {
+                toggleResponsiveNav();
+            }
+        });
+    });
+</script>

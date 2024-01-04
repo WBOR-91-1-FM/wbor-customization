@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spinitron/ark-player@latest/dist/arkPlayer.css">
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="https://cdn.jsdelivr.net/gh/spinitron/ark-player@latest/dist/arkPlayer.js"></script>
+
+<script>document.addEventListener('DOMContentLoaded', function () {
+        var arkPlayerContainer = document.getElementById('ark-player');
+
+        if (arkPlayerContainer) {
+            /*console.log('arkPlayerContainer found:', arkPlayerContainer);*/
+
+            var arkPlayerOptions = {
+                hlsBaseUrl: 'https://ark3.spinitron.com/ark2',
+                stationName: 'WBOR',
+                timeZone: 'America/New_York',
+            }
+
+                ;
+
+            try {
+                window.ark2Player(arkPlayerContainer, arkPlayerOptions);
+                console.log('ark2Player initialized successfully');
+            }
+
+            catch (error) {
+                console.error('Error initializing ark2Player:', error);
+            }
+        }
+
+        else {
+            console.error('arkPlayerContainer not found. Make sure the element with id "ark-player" exists in the DOM.');
+        }
+    });
+</script>

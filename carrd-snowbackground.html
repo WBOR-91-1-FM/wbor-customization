@@ -1,0 +1,67 @@
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.37.5/tsparticles.min.js"></script>
+</head>
+
+<style>
+</style>
+
+<!-- tsParticles container -->
+<div id="tsparticles"></div>
+<!-- tsParticles lib - https://github.com/matteobruni/tsparticles -->
+
+<script>
+    // Get the current date
+    var currentDate = new Date();
+
+    // Define the range of days when the script should be active (December 1st to March 1st)
+    var startDate = new Date(currentDate.getFullYear(), 11, 1); // 11 is December (months are 0-based)
+    var endDate = new Date(currentDate.getFullYear(), 2, 1); // 2 is March
+
+    // Check if the current date is within the specified range
+    if (currentDate >= startDate || currentDate < endDate) {
+        // Your tsParticles script here
+        tsParticles.load("tsparticles", {
+            background: {
+                color: "transparent"
+            },
+            particles: {
+                color: {
+                    value: "#EEE"
+                },
+                move: {
+                    direction: "bottom",
+                    enable: true,
+                    outModes: "out",
+                    speed: 1
+                },
+                number: {
+                    density: {
+                        enable: true,
+                        area: 1000
+                    },
+                    value: 100
+                },
+                opacity: {
+                    value: 0.1
+                },
+                shape: {
+                    type: "circle"
+                },
+                size: {
+                    value: 8
+                },
+                wobble: {
+                    enable: true,
+                    distance: 10,
+                    speed: 10
+                },
+                zIndex: {
+                    value: {
+                        min: 0,
+                        max: 100
+                    }
+                }
+            }
+        });
+    }
+</script>
