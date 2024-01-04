@@ -1,0 +1,397 @@
+/* Toggle Spinitron Elements */
+
+.footer-container,
+.social-share {
+  display: none;
+}
+
+.image {
+  display: none;
+}
+
+/* Calendar Colors */
+
+.spin-cal .fc-event.spin-cal-show {
+  border-color: #242424 !important;
+}
+
+/* .automated, */
+.category-automation {
+  background-color: #fff !important;
+}
+
+.category-ambient,
+.category-experimental {
+  background-color: #d6b1b1 !important;
+}
+
+.category-blues,
+.category-country,
+.category-folk {
+  background-color: #a38282 !important;
+}
+
+.category-classical,
+.category-jazz {
+  background-color: #3a6474 !important;
+}
+
+.category-dance,
+.category-electronic {
+  background-color: #809499 !important;
+}
+
+.category-hip-hop,
+.category-rnb {
+  background-color: #b37e5b !important;
+}
+
+.category-metal,
+.category-punk,
+.category-rock {
+  background-color: #4c807b !important;
+}
+
+.category-music,
+.category-pop,
+.category-regional {
+  background-color: #cc5858 !important;
+}
+
+.category-news {
+  background-color: #2e2f63 !important;
+}
+
+.category-talk {
+  background-color: #c0abc0 !important;
+}
+
+/* Calendar Styling */
+
+.spin-cal__datepicker,
+.spin_cal__highlight,
+.fc-state-disabled {
+  display: none !important;
+}
+
+.fc-listWeek-button,
+.fc-month-button {
+  display: none !important;
+}
+
+.fc-agendaDay-button {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.fc-agendaWeek-button {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.spin-cal .fc-left,
+.spin-cal .fc-right {
+  width: 20%;
+}
+
+/* enables the week between new years to display without linebreak due to unusual number of characters */
+
+.fc th {
+  border-width: 0;
+}
+
+/* Match wbor.org styling */
+
+div.head:nth-child(1) {
+  text-align: center;
+}
+
+div.head:nth-child(1)>div:nth-child(1) {
+  flex-direction: column;
+  display: flex;
+}
+
+.station-title {
+  order: 1;
+}
+
+.station-slogan {
+  order: 2;
+}
+
+div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(4) {
+  order: 3;
+}
+
+.station-description {
+  order: 4;
+  margin-top: 1em !important;
+}
+
+.home {
+  color: inherit;
+}
+
+h4 {
+  margin-top: 0px;
+}
+
+body.public {
+  color: #EEE;
+  background: #0E1111;
+}
+
+a {
+  color: #BADAFF;
+}
+
+a:hover {
+  color: #7599FF;
+}
+
+.view-page .head nav>ul>li>a {
+  text-decoration: underline;
+  text-transform: lowercase;
+}
+
+.view-page .head nav>ul>li:not(:first-child)::before {
+  content: "- ";
+}
+
+.view-page .head {
+  margin: 0;
+}
+
+.view-page .head>div {
+  margin: 0;
+}
+
+body.public .show-time {
+  color: #A8A8A8;
+}
+
+.ark-play-button {
+  display: none;
+}
+
+/* Current Show Info */
+
+div.head:nth-child(2) {
+  margin-top: .25rem;
+}
+
+.view-page .head>div:nth-child(2).image>img {
+  border: 0px solid #ddd;
+  border-radius: 0.5rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover !important;
+  width: 100% !important;
+}
+
+.dj-name {
+  margin-bottom: .25rem;
+}
+
+.description {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.episode-description {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+/* Playlist Block (non-automation) */
+
+.table-striped>tbody:nth-child(1) {
+  background: #333435;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.public-spins .spin-time {
+  color: #A8A8A8;
+}
+
+.table-striped tr:nth-child(2n+1) {
+  background-color: inherit;
+}
+
+.spin-icons ul {
+  margin-top: 5px;
+}
+
+[id^="sp-"]>td:nth-child(3)>div:nth-child(3)>ul:nth-child(2)>li:nth-child(2) {
+  display: none;
+}
+
+.table-bordered td,
+.table-bordered th {
+  border-top: 0px solid #A8A8A8;
+  border-bottom: 0px solid #A8A8A8;
+}
+
+.table-striped {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.playlist.spins .spin-time,
+.public-spins .spin-time {
+  width: 0rem;
+}
+
+body.public .table td {
+  vertical-align: middle;
+  padding-top: .3em;
+  padding-bottom: .3em;
+  padding-left: .6em;
+  padding-right: .6em;
+}
+
+.public-spins .spin-text .artist,
+.public-spins .spin-text .release {
+  color: inherit;
+}
+
+.playlist.spins .spin-text .release::before,
+.public-spins .spin-text .release::before,
+.public-spins .spin-text .parenthesis {
+  color: #A8A8A8;
+}
+
+.playlist.spins .active,
+.playlist.spins .table-striped tr.active,
+.public-spins .active,
+.public-spins .table-striped tr.active {
+  background-color: rgba(255, 245, 157, 0.21);
+  display: block;
+  border-radius: .5rem;
+}
+
+tr[id^="sp-"] td.spin-time {
+  text-align: center;
+}
+
+.playlist.spins .spin-art,
+.public-spins .spin-art {
+  width: 0;
+}
+
+.playlist.spins .spin-art .spin-art-container,
+.public-spins .spin-art .spin-art-container {
+  border: 0;
+  width: 5rem;
+  height: 5rem;
+}
+
+.playlist.spins .spin-art img,
+.public-spins .spin-art img {
+  border-radius: 0.5rem;
+}
+
+.spin-player {
+  transition: .15s ease;
+  border-radius: 0.5rem;
+}
+
+/* Ark Player */
+
+.ark-player-feedback {
+  display: none;
+}
+
+/* Center it */
+#ark-player {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5rem;
+}
+
+.ark-player {
+  margin-bottom: 1em;
+  margin-top: .25em;
+  display: flex
+    /* allows it to be centered */
+}
+
+.ark-player__date {
+  text-align: center;
+  width: fit-content;
+  padding-left: .4em !important;
+}
+
+.ark-player__picker .ark-player__date .select-css[name="date"] {
+  width: fit-content;
+}
+
+@media (hover: hover) {
+  .ark-player__volume-control {
+    display: none;
+  }
+}
+
+.ark-player__volume-control {
+  position: relative;
+  display: none;
+}
+
+@media (min-width: 25em) {
+  .ark-player {
+    max-width: fit-content;
+  }
+}
+
+.ark-player__time {
+  text-align: center;
+  width: fit-content;
+  padding-left: 0em !important;
+  padding-right: .4em !important;
+  padding-top: .3em !important;
+}
+
+.ark-player__picker .ark-player__time .select-css[name="hours"] {
+  width: fit-content;
+}
+
+.ark-player__picker .select-css {
+  color: #0E1111;
+  background: #EEE;
+  border-radius: 0.5rem;
+}
+
+
+.ark-player__mode-hint {
+  display: none;
+}
+
+.ark-player__picker,
+.ark-player__status {
+  align-items: center;
+}
+
+.ark-player__picker>div:nth-child(n)>select:nth-child(n) {
+  text-align: center;
+}
+
+.ark-player__date,
+.ark-player__time {
+  padding: .5em !important;
+}
+
+
+.coming-shows,
+.recent-playlists,
+.playlist-block {
+  background: #171717;
+  padding: 18px;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+ul.timeslot>li:nth-child(1) {
+  display: none;
+}
