@@ -15,11 +15,6 @@
   border-color: #242424 !important;
 }
 
-/* .automated, */
-.category-automation {
-  background-color: #fff !important;
-}
-
 .category-ambient,
 .category-experimental {
   background-color: #d6b1b1 !important;
@@ -89,9 +84,27 @@
   border-bottom-left-radius: 4px;
 }
 
-.spin-cal .fc-left,
-.spin-cal .fc-right {
+.fc-left,
+.fc-right {
   width: 20%;
+}
+
+.fc-clear {
+  display: none
+}
+
+@media (max-width: 560px) {
+  .spin-cal .fc-left, .spin-cal .fc-right {
+    flex-basis: 50%;
+  }
+}
+
+.fc-list-item:hover td {
+  background-color: inherit !important;
+}
+
+.fc-event-dot {
+  display: none;
 }
 
 /* enables the week between new years to display without linebreak due to unusual number of characters */
@@ -126,6 +139,7 @@ div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(4) {
 .station-description {
   order: 4;
   margin-top: 1em !important;
+  margin-bottom: .5em !important;
 }
 
 .home {
@@ -203,6 +217,11 @@ div.head:nth-child(2) {
 }
 
 /* Playlist Block (non-automation) */
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 .5em;
+}
 
 .table-striped>tbody:nth-child(1) {
   background: #333435;
@@ -392,6 +411,23 @@ tr[id^="sp-"] td.spin-time {
   margin-bottom: 1.5rem;
 }
 
-ul.timeslot>li:nth-child(1) {
+ul.timeslot>li:nth-child(n) {
   display: none;
+}
+
+/* DJ Page */
+.playlist-list .list-item {
+  border-bottom: none;
+}
+
+.playlist-list .toggle button {
+  display: none;
+}
+
+.head.persona {
+  margin-bottom: 1em;
+}
+
+.year {
+  display: none !important;
 }
