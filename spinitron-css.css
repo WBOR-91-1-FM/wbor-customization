@@ -1,19 +1,4 @@
-/* Toggle Spinitron Elements */
-
-.footer-container,
-.social-share {
-  display: none;
-}
-
-.image {
-  display: none;
-}
-
 /* Calendar Colors */
-
-.spin-cal .fc-event.spin-cal-show {
-  border-color: #242424 !important;
-}
 
 .category-ambient,
 .category-experimental {
@@ -61,94 +46,9 @@
   background-color: #c0abc0 !important;
 }
 
-/* Calendar Styling */
 
-.spin-cal__datepicker,
-.spin_cal__highlight,
-.fc-state-disabled {
-  display: none !important;
-}
 
-.fc-listWeek-button,
-.fc-month-button {
-  display: none !important;
-}
-
-.fc-agendaDay-button {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.fc-agendaWeek-button {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-
-.fc-left,
-.fc-right {
-  width: 20%;
-}
-
-.fc-clear {
-  display: none
-}
-
-@media (max-width: 560px) {
-  .spin-cal .fc-left, .spin-cal .fc-right {
-    flex-basis: 50%;
-  }
-}
-
-.fc-list-item:hover td {
-  background-color: inherit !important;
-}
-
-.fc-event-dot {
-  display: none;
-}
-
-/* enables the week between new years to display without linebreak due to unusual number of characters */
-
-.fc th {
-  border-width: 0;
-}
-
-/* Match wbor.org styling */
-
-div.head:nth-child(1) {
-  text-align: center;
-}
-
-div.head:nth-child(1)>div:nth-child(1) {
-  flex-direction: column;
-  display: flex;
-}
-
-.station-title {
-  order: 1;
-}
-
-.station-slogan {
-  order: 2;
-}
-
-div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(4) {
-  order: 3;
-}
-
-.station-description {
-  order: 4;
-  margin-top: 1em !important;
-  margin-bottom: .5em !important;
-}
-
-.home {
-  color: inherit;
-}
-
-h4 {
-  margin-top: 0px;
-}
+/* wbor.org Styling */
 
 body.public {
   color: #EEE;
@@ -166,137 +66,253 @@ a:hover {
 .view-page .head nav>ul>li>a {
   text-decoration: underline;
   text-transform: lowercase;
+  /* Decorate urls to match */
 }
 
-.view-page .head nav>ul>li:not(:first-child)::before {
-  content: "- ";
-}
-
-.view-page .head {
-  margin: 0;
-}
-
-.view-page .head>div {
-  margin: 0;
-}
-
-body.public .show-time {
-  color: #A8A8A8;
-}
-
-.ark-play-button {
-  display: none;
-}
-
-/* Current Show Info */
-
-div.head:nth-child(2) {
-  margin-top: .25rem;
-}
-
-.view-page .head>div:nth-child(2).image>img {
-  border: 0px solid #ddd;
-  border-radius: 0.5rem;
-  aspect-ratio: 1 / 1;
-  object-fit: cover !important;
-  width: 100% !important;
-}
-
-.dj-name {
-  margin-bottom: .25rem;
-}
-
-.description {
-  margin-bottom: 1rem;
-  margin-right: 1rem;
-}
-
-.episode-description {
-  margin-bottom: 1rem;
-  margin-right: 1rem;
-}
-
-/* Playlist Block (non-automation) */
-
-table {
-  border-collapse: separate;
-  border-spacing: 0 .5em;
-}
-
-.table-striped>tbody:nth-child(1) {
-  background: #333435;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-}
-
-.public-spins .spin-time {
-  color: #A8A8A8;
-}
-
-.table-striped tr:nth-child(2n+1) {
-  background-color: inherit;
-}
-
-.spin-icons ul {
-  margin-top: 5px;
-}
-
-[id^="sp-"]>td:nth-child(3)>div:nth-child(3)>ul:nth-child(2)>li:nth-child(2) {
-  display: none;
-}
-
-.table-bordered td,
-.table-bordered th {
-  border-top: 0px solid #A8A8A8;
-  border-bottom: 0px solid #A8A8A8;
-}
-
-.table-striped {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.playlist.spins .spin-time,
-.public-spins .spin-time {
-  width: 0rem;
-}
-
-body.public .table td {
-  vertical-align: middle;
-  padding-top: .3em;
-  padding-bottom: .3em;
-  padding-left: .6em;
-  padding-right: .6em;
+.show-time,
+.spin-time {
+  color: #A8A8A8 !important;
+  /* Match other text */
 }
 
 .public-spins .spin-text .artist,
 .public-spins .spin-text .release {
   color: inherit;
+  /* Override default red artist and release title color with sitewide */
 }
 
 .playlist.spins .spin-text .release::before,
 .public-spins .spin-text .release::before,
 .public-spins .spin-text .parenthesis {
   color: #A8A8A8;
+  /* Match secondary text color "from" and "(Record label info)" */
+}
+
+
+
+/* Modify Spinitron Defaults */
+
+.home {
+  color: inherit;
+  /* Make "WBOR 91.1 FM" title default text color (white) instead of url color */
+}
+
+.footer-container,
+.social-share,
+.image {
+  display: none;
+  /* Disable Spinitron default footer
+     Disable social share menu
+     Disable show and profile images */
+}
+
+h4 {
+  margin-top: 0px;
+  /* Override default padding between section headers ("On-air," "Coming up," "Recent" */
+}
+
+div.head:nth-child(1) {
+  text-align: center;
+  /* Center header */
+}
+
+div.head:nth-child(1)>div:nth-child(1) {
+  flex-direction: column;
+  display: flex;
+  /* Allow for reordering the header stack of elements */
+}
+
+.station-title {
+  order: 1;
+  /* "WBOR 91.1 FM" */
+}
+
+.station-slogan {
+  order: 2;
+  /* We don't display one, but if we did */
+}
+
+div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(4) {
+  order: 3;
+  /* Put calendar and website url below station name */
+}
+
+.view-page .head nav>ul>li:not(:first-child)::before {
+  content: "- ";
+  /* Seperator between "calendar" and "wbor.org" */
+}
+
+.station-description {
+  order: 4;
+  margin-top: 1em !important;
+}
+
+.ark-play-button {
+  display: none;
+  /* Hide ark play button in list of recent shows at bottom of homepage */
+}
+
+
+
+/* Current Show Info */
+
+.show-schedule {
+  list-style: none;
+  /* Remove bullet point before "Every week on {DAY}..." */
+}
+
+.persona-data {
+  list-style: none;
+  margin: 0 0 0 0em;
+  /* Remove bullet point before personal details and make alignment not inset */
+}
+
+.dj-name {
+  margin-bottom: .5rem !important;
+  /* Add spacing between show title, genre, and DJ and its description */
+}
+
+.head.playlist .data .description {
+  margin-bottom: 1rem;
+  /* Bottom margin for standard pages */
+}
+
+.playlist-block.onair .head.playlist .data .description {
+  margin-bottom: 0;
+  /* No bottom margin needed on the onair block since there might not be a
+     playlist below */
+}
+
+.spins-chat.current-playlist {
+  margin-top: 1rem;
+  /* Provide the margin if it exists */
+}
+
+.episode-description {
+  margin-bottom: 1rem;
+  /* TEST ME */
+}
+
+.coming-shows,
+.recent-playlists,
+.playlist-block,
+.show-block {
+  background: #171717;
+  padding: 18px;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  /* Add sub-background and round it between sections in
+     addition to padding and spacing */
+}
+
+.recent-playlists .table.table-bordered.table-narrow tbody tr td:nth-child(2) {
+  display: none;
+  /* Remove the blank Ark player button cell to prevent it from creating extra spacing */
+}
+
+
+
+/* Playlist Block */
+
+.table-striped>tbody:nth-child(1) {
+  background: #333435;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  /* Add background to the table body, padding, and round corners */
+}
+
+.table-striped tr:nth-child(2n+1) {
+  background-color: inherit;
+  /* Continuing the work from above:
+     Override default alternating spin background color changes (and make uniform
+     across the board) */
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 .5em;
+  /* Add spacing between spins */
+}
+
+.spin-icons ul {
+  margin-top: 5px;
+  /* Give spacing between Apple Music/Spotify buttons and line above */
+}
+
+[id^="sp-"]>td:nth-child(3)>div:nth-child(3)>ul:nth-child(2)>li:nth-child(2) {
+  display: none;
+  /* Remove Amazon button from between Apple Music & Spotify */
+}
+
+.table-bordered td,
+.table-bordered th {
+  border-top: 0px solid #A8A8A8;
+  border-bottom: 0px solid #A8A8A8;
+  /* Remove dividing lines between spins */
+}
+
+/* TO DO: fix slight vertical misalignment of text and album art 
+   (bottom of icons jut down too much) */
+
+.table-striped {
+  margin: 0;
+  /* Override default */
+  display: flex;
+  justify-content: center;
+  /* Center whole list of spins and make span actual width */
+}
+
+.playlist.spins .spin-time,
+.public-spins .spin-time {
+  width: 0rem;
+  /* Override default width making width actual width of time */
+}
+
+body.public .table td {
+  vertical-align: middle;
+  /* Align spin time to center of album art */
+  padding-left: .6em;
+  padding-right: .6em;
+  /* Add more spacing between table items than default (0.3em) */
 }
 
 .playlist.spins .active,
 .playlist.spins .table-striped tr.active,
 .public-spins .active,
 .public-spins .table-striped tr.active {
-  background-color: rgba(255, 245, 157, 0.21);
-  display: block;
-  border-radius: .5rem;
+  background-color: inherit;
+  /* Disable default highlighting when clicking timestamp of a spin */
+}
+
+.playlist.spins .table-striped tr.active .spin-art,
+.public-spins .table-striped tr.active .spin-art {
+  background: rgba(255, 245, 157, 0.21);
+  /* Background album art of spin */
+}
+
+.playlist.spins .table-striped tr.active .spin-time,
+.public-spins .table-striped tr.active .spin-time {
+  background: rgba(255, 245, 157, 0.21);
+  border-radius: 0.5rem 0 0 0.5rem;
+  /* Left side */
+}
+
+.playlist.spins .table-striped tr.active .spin-text,
+.public-spins .table-striped tr.active .spin-text {
+  background: rgba(255, 245, 157, 0.21);
+  border-radius: 0 0.5rem 0.5rem 0;
+  /* Right side */
 }
 
 tr[id^="sp-"] td.spin-time {
   text-align: center;
+  /* Align the spin time center horizontally */
 }
 
 .playlist.spins .spin-art,
 .public-spins .spin-art {
   width: 0;
+  /* Override default (BUT MIGHT NOT BE NECESSARY)... */
 }
 
 .playlist.spins .spin-art .spin-art-container,
@@ -304,69 +320,170 @@ tr[id^="sp-"] td.spin-time {
   border: 0;
   width: 5rem;
   height: 5rem;
+  /* Remove border and make art larger */
+  background: #EEE;
+  border-radius: .5rem;
+  /* Add default background for icon to sit on (in case of no art) */
 }
 
 .playlist.spins .spin-art img,
 .public-spins .spin-art img {
   border-radius: 0.5rem;
+  /* Round corners */
 }
 
 .spin-player {
-  transition: .15s ease;
   border-radius: 0.5rem;
+  /* Match art corner rounding */
 }
+
+.spin-player.active {
+  background: hsla(0, 0%, 100%, .6);
+  /* Don't remove background while buffering */
+}
+
+.spin-player.active.playing {
+  display: flex;
+  /* Fix issue where pause icon isn't vertically aligned in middle */
+  background: hsla(0, 0%, 100%, .6);
+  /* Add back frosted overlay while playing */
+  transition: .3s ease;
+  /* Fade out background when done playing */
+}
+
+
+
+/* DJ Persona Page */
+
+.playlist-list .list-item {
+  border-bottom: none;
+  /* Disable white seperating line between recent show dates */
+}
+
+.playlist-list .toggle button {
+  display: none;
+  /* Disable dropdown button for recent show info */
+}
+
+.head.persona {
+  margin-bottom: 1em;
+  /* Add margin below DJ bio & related info */
+}
+
+.year {
+  display: none !important;
+  /* Hide year in date in list of previous playlists on DJ profile pages */
+}
+
+
+
+/* Calendar Page */
+
+.spin-cal__datepicker,
+.spin_cal__highlight,
+.fc-state-disabled,
+.fc-listWeek-button,
+.fc-month-button,
+.fc-clear,
+.fc-event-dot {
+  display: none !important;
+}
+
+.fc-agendaDay-button {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  /* Fix corners after removing month */
+}
+
+.fc-agendaWeek-button {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  /* Fix corners after removing month */
+}
+
+.fc-left,
+.fc-right {
+  width: 20%;
+}
+
+@media (max-width: 560px) {
+  .spin-cal .fc-left,
+  .spin-cal .fc-right {
+    flex-basis: 50%;
+  }
+}
+
+.fc-list-item:hover td {
+  background-color: inherit !important;
+}
+
+.fc th {
+  border-width: 0;
+  /* Allows week between new years to display without linebreak due to high # of chars */
+}
+
+
 
 /* Ark Player */
 
-.ark-player-feedback {
+.ark-player-feedback,
+.ark-player__volume-control,
+.ark-player__mode-hint {
   display: none;
-}
-
-/* Center it */
-#ark-player {
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 0.5rem;
+  /* Hide link to Spinitron forum and volume control */
 }
 
 .ark-player {
   margin-bottom: 1em;
-  margin-top: .25em;
+  /* Add spacing below to match spacing in rest of site */
   display: flex
-    /* allows it to be centered */
+    /* Centers player, for some reason */
 }
 
-.ark-player__date {
-  text-align: center;
-  width: fit-content;
-  padding-left: .4em !important;
+#ark-player {
+  margin-left: auto;
+  margin-right: auto;
+  /* Center it */
+  border-radius: 0.5rem;
+  /* Round corners */
 }
 
-.ark-player__picker .ark-player__date .select-css[name="date"] {
-  width: fit-content;
-}
 
-@media (hover: hover) {
-  .ark-player__volume-control {
-    display: none;
-  }
-}
 
-.ark-player__volume-control {
-  position: relative;
-  display: none;
-}
+
+
+
+
+
+
 
 @media (min-width: 25em) {
   .ark-player {
     max-width: fit-content;
   }
+  /* ??? */
+}
+
+.ark-player__picker .select-css {
+  color: #0E1111;
+  background: #EEE;
+  border-radius: 0.5rem;
+  /* Match site font colors and corner rounding */
+}
+
+.ark-player__picker>div:nth-child(n)>select:nth-child(n) {
+  text-align: center;
+  /* Center options in box */
+}
+
+.ark-player__date,
+.ark-player__time {
+  padding: .5em !important;
+  text-align: center;
+  width: fit-content;
 }
 
 .ark-player__time {
-  text-align: center;
-  width: fit-content;
   padding-left: 0em !important;
   padding-right: .4em !important;
   padding-top: .3em !important;
@@ -374,60 +491,10 @@ tr[id^="sp-"] td.spin-time {
 
 .ark-player__picker .ark-player__time .select-css[name="hours"] {
   width: fit-content;
-}
-
-.ark-player__picker .select-css {
-  color: #0E1111;
-  background: #EEE;
-  border-radius: 0.5rem;
-}
-
-
-.ark-player__mode-hint {
-  display: none;
+  /* Needed or else "12 AM" gets cut off */
 }
 
 .ark-player__picker,
 .ark-player__status {
   align-items: center;
-}
-
-.ark-player__picker>div:nth-child(n)>select:nth-child(n) {
-  text-align: center;
-}
-
-.ark-player__date,
-.ark-player__time {
-  padding: .5em !important;
-}
-
-
-.coming-shows,
-.recent-playlists,
-.playlist-block {
-  background: #171717;
-  padding: 18px;
-  border-radius: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-ul.timeslot>li:nth-child(n) {
-  display: none;
-}
-
-/* DJ Page */
-.playlist-list .list-item {
-  border-bottom: none;
-}
-
-.playlist-list .toggle button {
-  display: none;
-}
-
-.head.persona {
-  margin-bottom: 1em;
-}
-
-.year {
-  display: none !important;
 }
