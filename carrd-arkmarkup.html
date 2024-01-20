@@ -49,3 +49,42 @@
         <div class="ark-player__mode-hint"></div>
     </div>
 </div>
+
+<style>
+    .ark-player-feedback,
+    .ark-player__volume-control,
+    .ark-player__mode-hint {
+        display: none;
+        /* Hide link to Spinitron forum and volume control */
+    }
+
+    .ark-player {
+        margin-bottom: 1em;
+        /* Add spacing below to match spacing in rest of site */
+        display: flex
+            /* Centers player, for some reason */
+    }
+
+    #ark-player {
+        margin-left: auto;
+        margin-right: auto;
+        /* Center it */
+        border-radius: 0.5rem;
+        /* Round corners */
+    }
+
+    .ark-player__date .select-css,
+    .ark-player__time .select-css {
+        background: #EEE;
+        color: #0E1111;
+        border-radius: 0.5rem;
+        /* Match rest of site styling */
+    }
+
+    .ark-player__picker .ark-player__date .select-css[name="date"],
+    .ark-player__picker .ark-player__time .select-css[name="hours"],
+    .ark-player__picker .ark-player__time .select-css[name="minutes"] {
+        width: fit-content;
+        /* Otherwise, sometimes "12AM" or similar will be clipped */
+    }
+</style>
