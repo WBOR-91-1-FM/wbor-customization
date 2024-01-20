@@ -1,3 +1,10 @@
+/* TO-DO: 
+   * fix slight vertical misalignment of text and album art (bottom of icons jut down too much)
+   * switch positions of <> and week | day on calendar page
+   * remove week | day when mobile media q switches display to list view on mobile
+       * with this, make the date on aligned left to top of table and <> aligned right
+*/
+
 /* Calendar Colors */
 
 .category-ambient,
@@ -129,12 +136,12 @@ div.head:nth-child(1)>div:nth-child(1) {
 
 .station-slogan {
   order: 2;
-  /* We don't display one, but if we did */
+  /* (We don't display one, but if we did, it should go here) */
 }
 
 div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(4) {
   order: 3;
-  /* Put calendar and website url below station name */
+  /* Calendar and website url below station name */
 }
 
 .view-page .head nav>ul>li:not(:first-child)::before {
@@ -154,55 +161,65 @@ div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(4) {
 
 
 
-/* Current Show Info */
+/* Show Info */
 
 .show-schedule {
   list-style: none;
-  /* Remove bullet point before "Every week on {DAY}..." */
+  /* On show pages: remove bullet point before "Every week on {DAY}..." */
 }
 
 .persona-data {
   list-style: none;
   margin: 0 0 0 0em;
-  /* Remove bullet point before personal details and make alignment not inset */
+  /* On persona pages: remove bullet point before personal details and make alignment not inset */
 }
 
 .dj-name {
-  margin-bottom: .5rem !important;
-  /* Add spacing between show title, genre, and DJ and its description */
+  margin-bottom: 0.5rem !important;
+  /* On now-playing, playlist, and show pages: add spacing between show title, genre, and DJ and its description */
 }
 
 .head.playlist .data .description {
   margin-bottom: 1rem;
-  /* Bottom margin for standard pages */
+  /* On now-playing, playlist, and show pages: bottom margin after description */
 }
 
 .playlist-block.onair .head.playlist .data .description {
   margin-bottom: 0;
-  /* No bottom margin needed on the onair block since there might not be a
-     playlist below */
+  /* From homepage "on-air" : no bottom margin needed on the onair block since there might not be a
+     playlist below yet. If there are no spins and you click on the playlist, there will be an
+     empty playlist block, so don't apply there. */
 }
 
 .spins-chat.current-playlist {
   margin-top: 1rem;
-  /* Provide the margin if it exists */
+  /* Provide the margin if it DOES exists since we removed it from below the description on the
+     homepage "on-air" */
 }
 
-.episode-description {
+.episode {
   margin-bottom: 1rem;
-  /* TEST ME */
+  /* If there is an episode title or title & description, add appropriate margin below */
 }
 
+.playlist-block,
 .coming-shows,
 .recent-playlists,
-.playlist-block,
-.show-block {
+.view-page .head.playlist:not(.playlist-block.onair .head.playlist), 
+.head.show {
   background: #171717;
   padding: 18px;
   border-radius: 0.5rem;
   margin-bottom: 1.5rem;
-  /* Add sub-background and round it between sections in
-     addition to padding and spacing */
+  /* Add sub-background and round it between sections in addition to padding and spacing
+     .playlist-block, .coming-shows, and .recent-playlists are the homepage
+     .head.playlist is the playlist page, .show the show page
+     Unfortunately the spins is not a subelement of the playlist title/desc on plist and show pages */
+}
+
+.view-page .head.playlist .description:not(.playlist-block.onair .head.playlist) {
+  margin-bottom: 0rem;
+  /* Remove description bottom margin on playlist page since creates unnecessary gap */
 }
 
 .recent-playlists .table.table-bordered.table-narrow tbody tr td:nth-child(2) {
@@ -251,26 +268,23 @@ table {
   /* Remove dividing lines between spins */
 }
 
-/* TO DO: fix slight vertical misalignment of text and album art 
-   (bottom of icons jut down too much) */
-
 .table-striped {
   margin: 0;
   /* Override default */
   display: flex;
   justify-content: center;
-  /* Center whole list of spins and make span actual width */
+  /* Center whole list of spins and make span actual width no full bleed */
 }
 
 .playlist.spins .spin-time,
 .public-spins .spin-time {
   width: 0rem;
-  /* Override default width making width actual width of time */
+  /* Override default width making width actual width of time (instead of fixed width) */
 }
 
 body.public .table td {
   vertical-align: middle;
-  /* Align spin time to center of album art */
+  /* Align spin time to center of album art vertically */
   padding-left: .6em;
   padding-right: .6em;
   /* Add more spacing between table items than default (0.3em) */
@@ -294,25 +308,19 @@ body.public .table td {
 .public-spins .table-striped tr.active .spin-time {
   background: rgba(255, 245, 157, 0.21);
   border-radius: 0.5rem 0 0 0.5rem;
-  /* Left side */
+  /* (Continue from above) left side */
 }
 
 .playlist.spins .table-striped tr.active .spin-text,
 .public-spins .table-striped tr.active .spin-text {
   background: rgba(255, 245, 157, 0.21);
   border-radius: 0 0.5rem 0.5rem 0;
-  /* Right side */
+  /* (Continue from above) right side */
 }
 
 tr[id^="sp-"] td.spin-time {
   text-align: center;
-  /* Align the spin time center horizontally */
-}
-
-.playlist.spins .spin-art,
-.public-spins .spin-art {
-  width: 0;
-  /* Override default (BUT MIGHT NOT BE NECESSARY)... */
+  /* Align the spin time center horizontally within cell */
 }
 
 .playlist.spins .spin-art .spin-art-container,
@@ -322,19 +330,20 @@ tr[id^="sp-"] td.spin-time {
   height: 5rem;
   /* Remove border and make art larger */
   background: #EEE;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
+  /* Rounding only visible if no image sitting above it */
   /* Add default background for icon to sit on (in case of no art) */
 }
 
 .playlist.spins .spin-art img,
 .public-spins .spin-art img {
   border-radius: 0.5rem;
-  /* Round corners */
+  /* Round corners of images (since rounding container doesn't work) */
 }
 
 .spin-player {
   border-radius: 0.5rem;
-  /* Match art corner rounding */
+  /* Match art corner rounding since spin-player sits above image */
 }
 
 .spin-player.active {
@@ -379,6 +388,10 @@ tr[id^="sp-"] td.spin-time {
 
 /* Calendar Page */
 
+.spin-cal {
+  margin-top: 2rem;
+}
+
 .spin-cal__datepicker,
 .spin_cal__highlight,
 .fc-state-disabled,
@@ -392,18 +405,30 @@ tr[id^="sp-"] td.spin-time {
 .fc-agendaDay-button {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  /* Fix corners after removing month */
+  /* Fix right corners after removing month */
 }
 
 .fc-agendaWeek-button {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-  /* Fix corners after removing month */
+  /* Fix left corners after removing month */
 }
 
-.fc-left,
-.fc-right {
-  width: 20%;
+.fc th {
+  border-width: 0;
+  /* Allows week between new years to display without linebreak due to high # of chars */
+}
+
+.fc-list-item:hover td {
+  background-color: inherit !important;
+  /* On mobile screens, Spinitron doesn't show the full calendar or day view
+     but instead list fiew. Turn off hover color which matches the text color,
+     making it unreadable */
+}
+
+.fc-unthemed .fc-list-heading td {
+  background: #323334;
+  /* Background color for date header in cal list view on mobile */
 }
 
 @media (max-width: 560px) {
@@ -411,15 +436,8 @@ tr[id^="sp-"] td.spin-time {
   .spin-cal .fc-right {
     flex-basis: 50%;
   }
-}
-
-.fc-list-item:hover td {
-  background-color: inherit !important;
-}
-
-.fc th {
-  border-width: 0;
-  /* Allows week between new years to display without linebreak due to high # of chars */
+  /* Override default of 100% which allows left/right button and week/day to
+     sit on the same line */
 }
 
 
@@ -437,7 +455,7 @@ tr[id^="sp-"] td.spin-time {
   margin-bottom: 1em;
   /* Add spacing below to match spacing in rest of site */
   display: flex
-    /* Centers player, for some reason */
+  /* Centers player, for some reason */
 }
 
 #ark-player {
@@ -448,53 +466,17 @@ tr[id^="sp-"] td.spin-time {
   /* Round corners */
 }
 
-
-
-
-
-
-
-
-
-
-@media (min-width: 25em) {
-  .ark-player {
-    max-width: fit-content;
-  }
-  /* ??? */
-}
-
-.ark-player__picker .select-css {
-  color: #0E1111;
+.ark-player__date .select-css,
+.ark-player__time .select-css {
   background: #EEE;
+  color: #0E1111;
   border-radius: 0.5rem;
-  /* Match site font colors and corner rounding */
+  /* Match rest of site styling */
 }
 
-.ark-player__picker>div:nth-child(n)>select:nth-child(n) {
-  text-align: center;
-  /* Center options in box */
-}
-
-.ark-player__date,
-.ark-player__time {
-  padding: .5em !important;
-  text-align: center;
+.ark-player__picker .ark-player__date .select-css[name="date"],
+.ark-player__picker .ark-player__time .select-css[name="hours"],
+.ark-player__picker .ark-player__time .select-css[name="minutes"] {
   width: fit-content;
-}
-
-.ark-player__time {
-  padding-left: 0em !important;
-  padding-right: .4em !important;
-  padding-top: .3em !important;
-}
-
-.ark-player__picker .ark-player__time .select-css[name="hours"] {
-  width: fit-content;
-  /* Needed or else "12 AM" gets cut off */
-}
-
-.ark-player__picker,
-.ark-player__status {
-  align-items: center;
+  /* Otherwise, sometimes "12AM" or similar will be clipped */
 }
