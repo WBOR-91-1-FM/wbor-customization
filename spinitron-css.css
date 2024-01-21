@@ -360,6 +360,13 @@ tr[id^="sp-"] td.spin-time {
   /* Fade out background when done playing */
 }
 
+@media (max-width: 560px) {
+  .parenthesis {
+    display: none;
+  }
+  /* Hide detailed info to fit better on small screens */
+}
+
 
 
 /* DJ Persona Page */
@@ -379,9 +386,34 @@ tr[id^="sp-"] td.spin-time {
   /* Add margin below DJ bio & related info */
 }
 
-.year {
+.year,
+.ark-play-button-box {
   display: none !important;
   /* Hide year in date in list of previous playlists on DJ profile pages */
+  /* Hide ark play button as it is not displayed majority of time */
+}
+
+.playlist-list .datetime {
+  min-width: fit-content;
+  /* Remove unnecessary gaps in spacing  */
+}
+
+.playlist-list .datetime .day {
+  min-width: 2.5em;
+}
+
+.playlist-list .datetime .time {
+  padding-right: 1em;
+}
+
+@media (max-width: 560px) {
+  .playlist-list .show {
+    white-space: nowrap;
+    max-width: 165px;
+    overflow: clip;
+    text-overflow: ellipsis
+  }
+  /* Keep past playlists all on one line on mobile */
 }
 
 
