@@ -114,13 +114,15 @@ a:hover {
 }
 
 h4 {
-  margin-top: 0px;
-  /* Override default padding between section headers ("On-air," "Coming up," "Recent" */
+  margin-top: 0;
+  margin-bottom: 0;
+  /* Override default padding between section headers ("Coming up," "Recent")
+     "On air" and "Just ended" are handled individually below */
 }
 
 div.head:nth-child(1) {
   text-align: center;
-  /* Center header */
+  /* Center header section */
 }
 
 div.head:nth-child(1)>div:nth-child(1) {
@@ -161,7 +163,7 @@ div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(4) {
 
 
 
-/* Show Info */
+/* Show Info & Display on Different Pages */
 
 .show-schedule {
   list-style: none;
@@ -174,52 +176,73 @@ div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(4) {
   /* On persona pages: remove bullet point before personal details and make alignment not inset */
 }
 
-.dj-name {
-  margin-bottom: 0.5rem !important;
-  /* On now-playing, playlist, and show pages: add spacing between show title, genre, and DJ and its description */
+div.description:empty {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  /* If there's no description, remove margins */
 }
 
-.head.playlist .data .description {
-  margin-bottom: 1rem;
-  /* On now-playing, playlist, and show pages: bottom margin after description */
+.description {
+  margin-top: 0.5rem !important;
+  /* On now-playing, playlist, and show pages: add spacing between show title, genre, and DJ and its description
+     Applied to description as opposed to .dj-name since there may be a show with no description, and if there
+     isn't a description there isn't a need to pad below (since it is already handled by container padding) */
 }
 
-.playlist-block.onair .head.playlist .data .description {
-  margin-bottom: 0;
-  /* From homepage "on-air" : no bottom margin needed on the onair block since there might not be a
-     playlist below yet. If there are no spins and you click on the playlist, there will be an
-     empty playlist block, so don't apply there. */
-}
-
-.spins-chat.current-playlist {
-  margin-top: 1rem;
+.current-playlist {
+  margin-top: 1.5rem;
   /* Provide the margin if it DOES exists since we removed it from below the description on the
      homepage "on-air" */
 }
 
 .episode {
-  margin-bottom: 1rem;
-  /* If there is an episode title or title & description, add appropriate margin below */
+  margin-top: 0.5rem;
+  /* No need to handle whether it is empty because if it isn't provided it won't exist */
 }
 
-.playlist-block,
+.show-block.onair > h4,
+.playlist-block.onair > h4,
+.playlist-block.justended > h4 {
+  margin-bottom: 1rem !important;
+  /* Create seperation so "On air" and "Just ended" doesn't blend into the show title/info block */
+}
+
+.show-block.onair > h4,
+.playlist-block.onair > h4 {
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  /* Fun "On air" shadow */
+}
+
+.show-block.onair,
+.playlist-block.onair,
+.playlist-block.justended,
+.head.show,
+.head.playlist,
 .coming-shows,
-.recent-playlists,
-.view-page .head.playlist:not(.playlist-block.onair .head.playlist), 
-.head.show {
+.recent-playlists {
   background: #171717;
   padding: 18px;
   border-radius: 0.5rem;
   margin-bottom: 1.5rem;
   /* Add sub-background and round it between sections in addition to padding and spacing
-     .playlist-block, .coming-shows, and .recent-playlists are the homepage
+     .show-block, .playlist-block, .coming-shows, and .recent-playlists are the homepage
      .head.playlist is the playlist page, .show the show page
-     Unfortunately the spins is not a subelement of the playlist title/desc on plist and show pages */
+     Unfortunately spins are not a subelement of the playlist title/desc on playlist and show pages */
 }
 
-.view-page .head.playlist .description:not(.playlist-block.onair .head.playlist) {
-  margin-bottom: 0rem;
-  /* Remove description bottom margin on playlist page since creates unnecessary gap */
+.show-block.onair > .head.show,
+.show-block.onair > .head.playlist,
+.playlist-block.onair > .head.show,
+.playlist-block.onair > .head.playlist,
+.playlist-block.justended > .head.show,
+.playlist-block.justended > .head.playlist {
+  background: initial;
+  padding: initial;
+  border-radius: initial;
+  margin-bottom: initial;
+  /* Prevent the .head.show and .head.playlist from the previous code from applying under
+     .show-block and .playlist-block since they are also nested within them. Accomplishes
+     by a reset of the styling to their initial values */
 }
 
 .recent-playlists .table.table-bordered.table-narrow tbody tr td:nth-child(2) {
@@ -365,6 +388,14 @@ tr[id^="sp-"] td.spin-time {
     display: none;
   }
   /* Hide detailed info to fit better on small screens */
+}
+
+
+
+/* Show Page */
+.infpager {
+  display: none;
+  /* Not sure what this was but it was adding padding above the list of past show playlists */
 }
 
 
