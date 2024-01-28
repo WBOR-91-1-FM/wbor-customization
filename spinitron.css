@@ -209,7 +209,7 @@ div.description:empty {
 
 .show-block.onair > h4,
 .playlist-block.onair > h4 {
-  text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  text-shadow: 0rem 0.25rem 1.5rem #FF0000;
   /* Fun "On air" shadow */
 }
 

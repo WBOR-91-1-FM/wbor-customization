@@ -43,4 +43,14 @@
             }
         }
     }
+
+    // Close dropdowns when the Escape key is pressed
+    function handleEscapeKey(event) {
+      if (event.key === 'Escape') {
+        visCtrl("hide","recentlyplayed", "hide","faq", "hide","listening-methods")
+      }
+    }
+
+    // Adding the event listener to the document
+    document.addEventListener('keydown', handleEscapeKey);
 </script>
