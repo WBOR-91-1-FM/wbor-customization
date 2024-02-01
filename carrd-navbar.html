@@ -73,6 +73,12 @@
         display: block;
     }
 
+    .fa.fa-caret-down {
+        margin-left: 0.5rem;
+        /* Caret button to the right of "about"
+           Add margin instead of a space char like "about " */
+    }
+
     /* Media Queries (device specific styling) */
 
     /* Desktop Only */
@@ -182,11 +188,12 @@
 </style>
 
 <div id="navMenu" class="navbar">
-    <a href="/#" aria-label="wbor.org"><img src="https://wbor.org/assets/images/logo.png?v=1e210820" class="logo" aria-label="WBOR Logo"></a>
+    <a href="/#" aria-label="wbor.org"><img src="https://wbor.org/assets/images/logo.png?v=1e210820" class="logo"
+            aria-label="WBOR Logo"></a>
     <a href="https://spinitron.com/WBOR/" target="_blank" rel="noopener noreferrer">playlists</a>
     <a href="/#contact">contact</a>
     <div class="submenu">
-        <button class="caretbutton">about <i class="fa fa-caret-down"></i></button>
+        <button class="caretbutton">about<i class="fa fa-caret-down"></i></button>
 
         <div class="submenu-links">
             <a href="/#about">station</a>
