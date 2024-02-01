@@ -182,7 +182,7 @@
 </style>
 
 <div id="navMenu" class="navbar">
-    <a href="/#"><img src="https://wbor.org/assets/images/logo.png?v=1e210820" class="logo"></a>
+    <a href="/#" aria-label="wbor.org"><img src="https://wbor.org/assets/images/logo.png?v=1e210820" class="logo" aria-label="WBOR Logo"></a>
     <a href="https://spinitron.com/WBOR/" target="_blank" rel="noopener noreferrer">playlists</a>
     <a href="/#contact">contact</a>
     <div class="submenu">
@@ -206,6 +206,7 @@
         var hamburger = document.querySelector(".hamburger");
         var navbarLinks = document.querySelectorAll(".navbar a:not(.hamburger)");
         var submenuButtons = document.querySelectorAll(".submenu .caretbutton");
+        var submenuLinks = document.querySelectorAll(".submenu-links a");
 
         // Toggle the responsive class on the navbar
         function toggleResponsiveNav() {
@@ -215,15 +216,18 @@
         // Event handler for hamburger menu click
         hamburger.addEventListener("click", function (event) {
             event.preventDefault();
-            toggleResponsiveNav();
+            toggleResponsiveNav(); // shows if hidden, hides if shown
         });
 
-        // Event handler for navbar link clicks - if mobile navbar and click a link, close menu after clicking
+        // Event handler for navbar link clicks - if using the mobile navbar and you click a link, 
+        // close the menu after clicking
         navbarLinks.forEach(function (link) {
             link.addEventListener("click", function () {
-                if (nav.classList.contains("responsive")) {
+                if (nav.classList.contains("responsive")) { // checks mobile
                     toggleResponsiveNav();
-                }
+                } // submenu visibility handled in next function
+
+                // hide these regardless of if we're on mobile
                 visCtrl(
                     "hide",
                     "recentlyplayed",
@@ -235,18 +239,15 @@
             });
         });
 
-        // Event handler for submenu button clicks - if mobile navbar and click a submenu link, open submenu
-        submenuButtons.forEach(function (button) {
-            button.addEventListener("click", function (event) {
-                if (nav.classList.contains("responsive")) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    button.parentNode.querySelector(".submenu-links").classList.toggle("show");
-                }
+        // Event handler for submenu link clicks - hide the submenu by setting display to none
+        submenuLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
+                var submenuLinksContainer = link.parentNode;
+                //submenuLinksContainer.style.display = (submenuLinksContainer.style.display === 'none' || submenuLinksContainer.style.display === '') ? 'block' : 'none';
             });
         });
 
-        // Close the responsive menu when clicking outside the navbar
+        // Close the responsive (mobile) menu when clicking outside the navbar
         document.addEventListener("click", function (event) {
             if (!nav.contains(event.target) && nav.classList.contains("responsive")) {
                 toggleResponsiveNav();

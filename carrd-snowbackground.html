@@ -19,7 +19,6 @@
 
     // Check if the current date is within the specified range
     if (currentDate >= startDate || currentDate < endDate) {
-        // Your tsParticles script here
         tsParticles.load("tsparticles", {
             background: {
                 color: "transparent"
@@ -63,5 +62,10 @@
                 }
             }
         });
+
+        var snowCanvasElement = document.querySelector('.tsparticles-canvas-el');
+        if (snowCanvasElement) {
+            snowCanvasElement.setAttribute("aria-label", "Festive snowflake animation");
+        }
     }
 </script>
