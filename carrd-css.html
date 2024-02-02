@@ -1,4 +1,16 @@
 <style>
+    .style1.links a::before,
+    .style2.concert-links.links a::before {
+        content: "(";
+        /* Stylize with CSS rather than the link field itself */
+    }
+    
+    .style1.links a::after,
+    .style2.concert-links.links {
+        content: ")";
+        /* Stylize with CSS rather than the link field itself */
+    }
+
     .concert-links,
     .poster {
         padding-left: 1.50390625rem;
@@ -21,5 +33,4 @@
         margin-right: auto;
         /* all sites? actually no idea what this is */
     }
-
 </style>
