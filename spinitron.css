@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 /* TO-DO: 
    * fix slight vertical misalignment of text and album art (bottom of icons jut down too much)
    * switch positions of <> and week | day on calendar page
@@ -60,6 +62,13 @@
 body.public {
   color: #EEE;
   background: #0E1111;
+}
+
+body {
+  font-family: 'Inter', sans-serif !important;
+  letter-spacing: 0.025rem !important;
+  font-weight: 300 !important;
+  /* Match WBOR font */
 }
 
 a {
@@ -203,14 +212,29 @@ div.description:empty {
 .show-block.onair > h4,
 .playlist-block.onair > h4,
 .playlist-block.justended > h4 {
-  margin-bottom: 1rem !important;
+  margin-bottom: 0.666rem !important;
   /* Create seperation so "On air" and "Just ended" doesn't blend into the show title/info block */
+}
+
+table.table-bordered.table-narrow {
+  margin-top: 0;
+  /* Table of upcoming and recent shows already has built in padding/margin */
 }
 
 .show-block.onair > h4,
 .playlist-block.onair > h4 {
   text-shadow: 0rem 0.25rem 1.5rem #FF0000;
-  /* Fun "On air" shadow */
+  background-color: rgba(255,0,0,0.161);
+  border-color: #A80000;
+  border-style: solid;
+  border-width: 0.07rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 0.333rem;
+  width: fit-content;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  /* Fun "On air" shadow and box */
 }
 
 .show-block.onair,
