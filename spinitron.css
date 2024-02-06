@@ -85,6 +85,14 @@ a:hover {
   /* Decorate urls to match */
 }
 
+div.head:nth-child(1) > div:nth-child(1) > nav:nth-child(4) a::before {
+  content: "(";
+}
+
+div.head:nth-child(1) > div:nth-child(1) > nav:nth-child(4) a::after {
+  content: ")";
+}
+
 .show-time,
 .spin-time {
   color: #A8A8A8 !important;
@@ -196,6 +204,17 @@ div.description:empty {
   /* On now-playing, playlist, and show pages: add spacing between show title, genre, and DJ and its description
      Applied to description as opposed to .dj-name since there may be a show with no description, and if there
      isn't a description there isn't a need to pad below (since it is already handled by container padding) */
+}
+
+.timeslot,
+.show-categoty,
+.dj-name,
+.fc-content {
+  font-weight: 400;
+}
+
+.artist {
+  font-weight: 500;
 }
 
 .current-playlist {
