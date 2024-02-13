@@ -297,6 +297,14 @@ table.table-bordered.table-narrow {
 
 /* Playlist Block */
 
+.playlist.spins .spin-text .song::before, .public-spins .spin-text .song::before {
+  content: "- ";
+}
+
+.playlist.spins .spin-text .song::after, .public-spins .spin-text .song::after {
+  content: "";
+}
+
 .table-striped>tbody:nth-child(1) {
   background: #333435;
   padding: 0.5rem;
@@ -498,8 +506,10 @@ tr[id^="sp-"] td.spin-time {
   margin-top: 2rem;
 }
 
-.spin-cal .fc-event.spin-cal.pl {
-  border-color: transparent;
+.spin-cal .fc-event.spin-cal-pl,
+.spin-cal .fc-event.spin-cal-show {
+  background-color: #afafaf;
+  border-color: #0E1111;
 }
 
 .spin-cal__datepicker,
