@@ -498,6 +498,10 @@ tr[id^="sp-"] td.spin-time {
   margin-top: 2rem;
 }
 
+.spin-cal .fc-event.spin-cal.pl {
+  border-color: transparent;
+}
+
 .spin-cal__datepicker,
 .spin_cal__highlight,
 .fc-state-disabled,
