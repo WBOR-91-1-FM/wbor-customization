@@ -297,14 +297,6 @@ table.table-bordered.table-narrow {
 
 /* Playlist Block */
 
-.playlist.spins .spin-text .song::before, .public-spins .spin-text .song::before {
-  content: "- ";
-}
-
-.playlist.spins .spin-text .song::after, .public-spins .spin-text .song::after {
-  content: "";
-}
-
 .table-striped>tbody:nth-child(1) {
   background: #333435;
   padding: 0.5rem;
