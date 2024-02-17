@@ -1,3 +1,4 @@
+// INACTIVE:
 // Stopped using this because was able to add &volume=100 to the embed URL
 
 // Function to set the default volume to max (100)

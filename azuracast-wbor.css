@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', 'Arial';
     letter-spacing: 0.025rem;
 }
 
-body, svg {
+body,
+svg {
     color: #EEEEEE;
 }
 
@@ -137,7 +138,8 @@ strong {
 span {
     font-size: 0.9rem;
 }
- /* Recently Played: "# minutes ago" */
+
+/* Recently Played: "# minutes ago" */
 div.song:nth-child(n)>small:nth-child(n) {
     color: #A8A8A8 !important;
     font-size: .8rem;
