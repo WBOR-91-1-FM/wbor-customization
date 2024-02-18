@@ -206,6 +206,11 @@ div.description:empty {
      isn't a description there isn't a need to pad below (since it is already handled by container padding) */
 }
 
+.description p:nth-child(n+2) {
+  padding-top: 0.333rem;
+  /* Add spacing between description paragraphs */
+}
+
 .timeslot,
 .show-categoty,
 .dj-name,
