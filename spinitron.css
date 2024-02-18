@@ -5,6 +5,7 @@
    * switch positions of <> and week | day on calendar page
    * remove week | day when mobile media q switches display to list view on mobile
        * with this, make the date on aligned left to top of table and <> aligned right
+   * remove show/DJ photos on mobile
 */
 
 /* Calendar Colors */
@@ -122,12 +123,39 @@ div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(4) a::after {
 }
 
 .footer-container,
-.social-share,
-.image {
+.social-share {
   display: none;
   /* Disable Spinitron default footer
-     Disable social share menu
-     Disable show and profile images */
+     Disable social share menu */
+}
+
+html body.public.show.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page div.head.show div.image img,
+html body.public.dj.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page div.head.persona div.image {
+  align-self: center;
+  /* Align show images vertically in head show container */
+}
+
+html body.public.station.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page div.head.station div.image,
+html body.public.show.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page div.head.station div.image,
+html body.public.dj.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page div.head.station div.image,
+html body.public.pl.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page div.head.station div.image,
+html body.public.calendar.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page div.head.station div.image {
+  display: none;
+  /* Hide logo for now */
+}
+
+.view-page .head>div:nth-child(2).image>img {
+  border: 0px;
+  border-radius: 0.5rem;
+  /* Remove default border and correct radius for show/persona images */
+}
+
+.image img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover !important;
+  width: 100% !important;
+  border-radius: 0.5rem;
+  /* Keep square */
 }
 
 h4 {
@@ -189,8 +217,13 @@ div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(4) {
 
 .persona-data {
   list-style: none;
-  margin: 0 0 0 0em;
+  margin: 0 0 0.5rem 0;
   /* On persona pages: remove bullet point before personal details and make alignment not inset */
+}
+
+.head.persona>div> :nth-child(n+5) {
+  margin-top: 0.333rem;
+  /* Add spacing between persona bio paragraphs */
 }
 
 div.description:empty {
@@ -233,6 +266,21 @@ div.description:empty {
   /* No need to handle whether it is empty because if it isn't provided it won't exist */
 }
 
+.episode-description img,
+.description img {
+  max-height: 225px;
+  width: auto;
+  border-radius: .5rem;
+  /* Enforce limits on DJ-uploaded photos */
+}
+
+.episode-description h4,
+.description h4 {
+  margin-top: revert;
+  margin-bottom: revert;
+  /* H4 used elsewhere is for different effect */
+}
+
 .show-block.onair>h4,
 .playlist-block.onair>h4,
 .playlist-block.justended>h4 {
@@ -266,16 +314,19 @@ table.table-bordered.table-narrow {
 .playlist-block.justended,
 .head.show,
 .head.playlist,
+.head.persona,
 .coming-shows,
 .recent-playlists {
   background: #171717;
   padding: 18px;
   border-radius: 0.5rem;
   margin-bottom: 1.5rem;
+  align-items: center;
   /* Add sub-background and round it between sections in addition to padding and spacing
      .show-block, .playlist-block, .coming-shows, and .recent-playlists are the homepage
      .head.playlist is the playlist page, .show the show page
-     Unfortunately spins are not a subelement of the playlist title/desc on playlist and show pages */
+     Unfortunately spins are not a sub-element of the playlist title/desc on playlist and show pages
+     align-items: center in case of no description or such */
 }
 
 .show-block.onair>.head.show,
@@ -463,7 +514,24 @@ tr[id^="sp-"] td.spin-time {
 
 .head.persona {
   margin-bottom: 1em;
-  /* Add margin below DJ bio & related info */
+  align-items: center;
+  /* Add margin below DJ bio & related info, and align center for case where there is no info or bio */
+}
+
+html body.public.dj.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page h4 {
+  text-align: center;
+  /* Center "{PERSON's} previous playlists" */
+}
+
+.list-container {
+  display: flex;
+  justify-content: center;
+  /* Center previous playlists table */
+}
+
+.persona-calendar {
+  display: none;
+  /* Redundant since few DJs have more than one on the calendar, and nobody is discovering their show via the persona page */
 }
 
 .year,
