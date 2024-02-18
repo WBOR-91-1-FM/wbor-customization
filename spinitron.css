@@ -262,7 +262,9 @@ div.description:empty {
 }
 
 .episode {
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: dashed 1px rgba(255, 255, 255, 0.271);
   /* No need to handle whether it is empty because if it isn't provided it won't exist */
 }
 
