@@ -78,6 +78,7 @@ a {
 
 a:hover {
   color: #7599FF;
+  transition: color 0.125s ease;
 }
 
 .view-page .head nav>ul>li>a {
