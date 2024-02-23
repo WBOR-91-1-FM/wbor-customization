@@ -6,9 +6,24 @@ body {
     letter-spacing: 0.025rem;
 }
 
-body,
+body {
+    color: #EEEEEE;
+}
+
 svg {
     color: #EEEEEE;
+    transition: color 0.125s ease;
+}
+
+svg:hover {
+    color: rgb(233, 0, 0);
+    transition: color 0.25s ease;
+}
+
+.now-playing-art a.album-art {
+    display: inline-block;
+    height: 85px;
+    width: 85px;
 }
 
 /* Set root default font size that rem is based on */
@@ -23,6 +38,8 @@ svg {
     background: #171717;
     border-radius: 0.5rem;
     padding: 6px;
+    align-items: center;
+    /* Not necessary but reduces flexbox size */
 }
 
 /* Stream Player: ensure sizing even in case of no title */
@@ -82,6 +99,38 @@ svg {
 
 .now-playing-title {
     font-weight: bolder;
+}
+
+.now-playing-main {
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 322px) {
+    .now-playing-main::before {
+        content: "";
+        width: 0.66rem;
+        height: 0.66rem;
+        border-radius: 50%;
+        background-color: red;
+        margin-right: 1rem;
+        box-shadow: 0rem 0rem 0.5rem #F00, 0rem 0rem 0.5rem #F00, 0rem 0rem 0.5rem #F00;
+        animation: pulsate 3s ease-in-out infinite;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        opacity: 0.33;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.33;
+    }
 }
 
 .now-playing-details {
