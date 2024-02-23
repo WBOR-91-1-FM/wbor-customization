@@ -1,14 +1,20 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
 <style>
     body {
         font-family: 'Inter', sans-serif;
         letter-spacing: 0.025rem;
     }
 
-    .logo {
-        height: 36px;
+    .navbar a,
+    .navbar button {
+        text-transform: lowercase;
+    }
+
+    .navbar a:nth-child(6) {
+        text-transform: uppercase !important;
+    }
+
+    .navbar a:nth-child(7) {
+        text-decoration: underline;
     }
 
     /* Navbar Styles */
@@ -30,8 +36,17 @@
     /* Hamburger Menu Styles */
     .navbar .hamburger {
         display: none;
-        font-size: 24px;
         cursor: pointer;
+    }
+
+    .navbar .hamburger::before {
+        content: "(";
+        /* Stylize with CSS rather than the link field itself */
+    }
+
+    .navbar .hamburger::after {
+        content: ")";
+        /* Stylize with CSS rather than the link field itself */
     }
 
     /* Submenu Styles */
@@ -73,16 +88,10 @@
         display: block;
     }
 
-    .fa.fa-caret-down {
-        margin-left: 0.5rem;
-        /* Caret button to the right of "about"
-           Add margin instead of a space char like "about " */
-    }
-
     /* Media Queries (device specific styling) */
 
     /* Desktop Only */
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 601px) {
 
         .navbar a:hover,
         .submenu:hover .caretbutton {
@@ -189,22 +198,22 @@
 
 <div id="navMenu" class="navbar" role="navigation">
     <a href="/#" aria-label="wbor.org"><img src="https://wbor.org/assets/images/logo.png?v=1e210820" class="logo"
-            aria-label="WBOR Logo"></a>
-    <a href="https://spinitron.com/WBOR/" target="_blank" rel="noopener noreferrer">playlists</a>
-    <a href="/#contact">contact</a>
+            aria-label="WBOR Logo" width="auto" height="36px"></a>
+    <a href="https://spinitron.com/WBOR/" target="_blank" rel="noopener noreferrer">Playlists</a>
+    <a href="/#contact">Contact</a>
     <div class="submenu">
-        <button class="caretbutton">about<i class="fa fa-caret-down"></i></button>
+        <button class="caretbutton">About</button>
 
         <div class="submenu-links">
-            <a href="/#about">station</a>
-            <a href="/#history">history</a>
-            <a href="/#alumni">alumni</a>
-            <a href="/#station-tour">studio</a>
+            <a href="/#about">Station</a>
+            <a href="/#history">History</a>
+            <a href="/#alumni">Alumni</a>
+            <a href="/#station-tour">Studio</a>
         </div>
     </div>
-    <a href="https://merch.wbor.org/" target=”_blank” rel="noopener noreferrer me">merch</a>
+    <a href="https://merch.wbor.org/" target=”_blank” rel="noopener noreferrer me">Merch</a>
     <a href="/#zine" style="font-family: 'Courier New', Courier, monospace;font-weight: 600;text-align: center;">FYS</a>
-    <a class="hamburger"><i class="fa fa-bars"></i></a>
+    <a class="hamburger" href="">Menu</a>
 </div>
 
 <script>
