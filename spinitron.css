@@ -297,7 +297,8 @@ table.table-bordered.table-narrow {
 
 .show-block.onair>h4,
 .playlist-block.onair>h4 {
-  text-shadow: 0rem 0.25rem 1.5rem #FF0000;
+  text-shadow: 0rem 0rem 0.75rem #F00,
+    0rem 0rem 0.75rem #F00;
   background-color: rgba(255, 0, 0, 0.161);
   border-color: #A80000;
   border-style: solid;
@@ -308,7 +309,23 @@ table.table-bordered.table-narrow {
   width: fit-content;
   font-family: 'Courier New', monospace;
   text-transform: uppercase;
+  box-shadow: 0rem 0rem 1rem #F00,
+    0rem 0rem 0.5rem #F00;
+  animation: pulse 3s infinite alternate;
   /* Fun "On air" shadow and box */
+}
+
+/* Keyframes for pulsating effect */
+@keyframes pulse {
+  0% {
+    box-shadow: 0rem 0rem 0.25rem #F00,
+      0rem 0rem 0.125rem #F00;
+  }
+
+  100% {
+    box-shadow: 0rem 0rem 1rem #F00,
+      0rem 0rem 0.5rem #F00;
+  }
 }
 
 .show-block.onair,
@@ -492,7 +509,58 @@ tr[id^="sp-"] td.spin-time {
   /* Hide detailed info to fit better on small screens */
 }
 
+.parenthesis::before {
+  display: none;
+}
 
+.parenthesis::after {
+  display: none;
+  /* Since we're gonna move the end quote to after the release year
+  NOTHING SHOULD COME AFTER RELEASE YEAR! */
+}
+
+.local {
+  text-shadow: 0rem 0rem 0.75rem #007cff,
+    0rem 0rem 0.75rem #007cff,
+    0rem 0rem 0.75rem #007cff;
+  white-space: nowrap;
+  padding: 0.5rem;
+  /* Decorate "Maine-Based Artist" text */
+}
+
+.new {
+  text-shadow: 0rem 0rem 0.75rem #F00,
+    0rem 0rem 0.75rem #F00,
+    0rem 0rem 0.75rem #F00;
+  white-space: nowrap;
+  padding: 0.5rem;
+  /* Decorate "New Release" text */
+}
+
+.request {
+  display: none;
+}
+
+.va {
+  display: none;
+}
+
+.label {
+  display: none;
+}
+
+.released::before {
+  content: "(" !important;
+}
+
+.released::after {
+  content: ")" !important;
+}
+
+.medium {
+  display: none;
+  /* Hide playback medium */
+}
 
 /* Show Page */
 .infpager {
