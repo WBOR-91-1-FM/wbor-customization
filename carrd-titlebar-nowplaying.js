@@ -8,88 +8,77 @@
             var streamdiv = document.getElementById('streamdiv');
             var recentlyplayeddiv = document.getElementById('recentlyplayeddiv');
             var fallbackContent = document.getElementById('fallbackContent');
+            var websocket;
 
             function createWebSocket() {
-                var websocket = new WebSocket(websocketUrl);
+                websocket = new WebSocket(websocketUrl);
 
                 // Connection event
-                websocket.addEventListener('open', function (event) {
-                    console.log('WebSocket connection opened.');
-                    fallbackContent.style.display = 'none';
-                    streamdiv.style.display = 'revert';
-                    recentlyplayeddiv.style.display = 'revert';
-
-                    // Send the connection string
-                    var connectionData = { "subs": { "station:wbor": {} } };
-                    websocket.send(JSON.stringify(connectionData));
-                });
+                websocket.addEventListener('open', handleWebSocketOpen);
 
                 // Message event
-                websocket.addEventListener('message', function (event) {
-                    try {
-                        var data = JSON.parse(event.data);
-                        console.log('Received data:', data);
-
-                        // Check if it's a Now Playing update
-                        if (data && data.pub && data.pub.data && data.pub.data.np && data.pub.data.np.now_playing && data.pub.data.np.now_playing.song) {
-                            var currentSong = data.pub.data.np.now_playing.song;
-                            var currentSongTitle = currentSong.title;
-                            var currentSongArtist = currentSong.artist;
-
-                            if (currentSongTitle === "Fetching song...") {
-                                console.log('Did not receive a song: either WBOR audio encoder is down or new nowplaying metadata hasn\'t been sent yet.');
-                                document.title = "WBOR 91.1 FM - Bowdoin College Polar Bear Radio";
-                            } else {
-                                // Concatenate "title" and "artist"
-                                var concatenatedTitle = currentSongTitle + ' - ' + currentSongArtist;
-                                console.log('Current Song Title:', concatenatedTitle);
-                                document.title = concatenatedTitle;
-                            }
-                        }
-                    } catch (error) {
-                        console.error('Error parsing JSON:', error);
-                    }
-                });
-
-                // Error event
-                websocket.addEventListener('error', function (event) {
-                    console.error('WebSocket error:', event);
-                });
+                websocket.addEventListener('message', handleWebSocketMessage);
 
                 // Close event (connection drops or fails to connect)
-                websocket.addEventListener('close', function (event) {
-                    console.log('WebSocket connection failed.');
-                    document.title = "WBOR 91.1 FM - Bowdoin College Polar Bear Radio";
-                    fallbackContent.style.display = 'block';
-                    streamdiv.style.display = 'none';
-                    recentlyplayeddiv.style.display = 'none';
-                    retry();
-                });
+                websocket.addEventListener('close', handleWebSocketClose);
+            }
 
-                return websocket;
+            function handleWebSocketOpen(event) {
+                console.log('WebSocket connection opened.');
+                fallbackContent.style.display = 'none';
+                streamdiv.style.display = 'revert';
+                recentlyplayeddiv.style.display = 'revert';
+
+                // Send the connection string
+                var connectionData = { "subs": { "station:wbor": {} } };
+                websocket.send(JSON.stringify(connectionData));
+            }
+
+            function handleWebSocketMessage(event) {
+                try {
+                    var data = JSON.parse(event.data);
+                    console.log('Received data:', data);
+
+                    // Check if it's a Now Playing update
+                    if (data && data.pub && data.pub.data && data.pub.data.np && data.pub.data.np.now_playing && data.pub.data.np.now_playing.song) {
+                        var currentSong = data.pub.data.np.now_playing.song;
+                        var currentSongTitle = currentSong.title;
+                        var currentSongArtist = currentSong.artist;
+
+                        if (currentSongTitle === "Fetching song...") {
+                            console.log('Did not receive a song: either WBOR audio encoder is down or new nowplaying metadata hasn\'t been sent yet.');
+                            document.title = "WBOR 91.1 FM - Bowdoin College Polar Bear Radio";
+                        } else {
+                            // Concatenate "title" and "artist"
+                            var concatenatedTitle = currentSongTitle + ' - ' + currentSongArtist;
+                            console.log('Current Song Title:', concatenatedTitle);
+                            document.title = concatenatedTitle;
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error parsing JSON:', error);
+                }
+            }
+
+            function handleWebSocketClose(event) {
+                console.log('WebSocket connection failed.');
+                document.title = "WBOR 91.1 FM - Bowdoin College Polar Bear Radio";
+                fallbackContent.style.display = 'block';
+                streamdiv.style.display = 'none';
+                recentlyplayeddiv.style.display = 'none';
+                retry();
             }
 
             function retry() {
                 console.log('Retrying in ' + retryInterval / 1000 + ' seconds...');
-                setTimeout(function () {
-                    updateTabTitle();
-                }, retryInterval);
+                setTimeout(createWebSocket, retryInterval);
             }
 
             // Create the initial WebSocket connection
-            var websocket = createWebSocket();
-
-            // Clear the previous WebSocket connection when retrying
-            function clearWebSocket() {
-                websocket.removeEventListener('open', function () { });
-                websocket.removeEventListener('message', function () { });
-                websocket.removeEventListener('error', function () { });
-                websocket.removeEventListener('close', function () { });
-                websocket.close();
-            }
+            createWebSocket();
         }
 
-// Call the function initially and update it as needed
-updateTabTitle();
+    // Call the function initially and update it as needed
+    updateTabTitle();
 });
 </script>
