@@ -8,6 +8,15 @@
    * remove show/DJ photos on mobile
 */
 
+.ark-player {
+  width: 80%;
+}
+
+body.public .wrapper {
+  width: 90%
+}
+
+
 /* Calendar Colors */
 
 .category-ambient,
