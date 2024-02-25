@@ -65,6 +65,7 @@
         outline: none;
         font-size: inherit;
         font-family: inherit;
+        cursor: pointer;
     }
 
     .submenu-links {
@@ -202,7 +203,7 @@
     <a href="https://spinitron.com/WBOR/" target="_blank" rel="noopener noreferrer">Playlists</a>
     <a href="/#contact">Contact</a>
     <div class="submenu">
-        <button class="caretbutton">About</button>
+        <button class="caretbutton" id="aboutButton">About</button>
 
         <div class="submenu-links">
             <a href="/#about">Station</a>
@@ -221,6 +222,7 @@
         var nav = document.getElementById("navMenu");
         var hamburger = document.querySelector(".hamburger");
         var navbarLinks = document.querySelectorAll(".navbar a:not(.hamburger)");
+        var aboutButton = document.getElementById("aboutButton");
         var submenuButtons = document.querySelectorAll(".submenu .caretbutton");
         var submenuLinks = document.querySelectorAll(".submenu-links a");
 
@@ -265,6 +267,13 @@
             if (!nav.contains(event.target) && nav.classList.contains("responsive")) {
                 toggleResponsiveNav();
             }
+        });
+
+        aboutButton.addEventListener("click", function () {
+            // Redirect to the desired link
+            console.log("pushed");
+            event.preventDefault(); // Prevent the default action
+            window.location.href = "/#about"; // Redirect to the desired link
         });
     });
 </script>
