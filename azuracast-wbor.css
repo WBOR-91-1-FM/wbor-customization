@@ -20,12 +20,6 @@ svg:hover {
     transition: color 0.25s ease;
 }
 
-.now-playing-art a.album-art {
-    display: inline-block;
-    height: 85px;
-    width: 85px;
-}
-
 /* Set root default font size that rem is based on */
 :root {
     --bs-root-font-size: 16px;
@@ -71,6 +65,12 @@ svg:hover {
     object-fit: cover !important;
     width: 100% !important;
     border-radius: 0.5rem;
+}
+
+.now-playing-art a.album-art {
+    display: inline-block;
+    height: 85px;
+    width: 85px;
 }
 
 /* Stream Player: play button tweaks */
