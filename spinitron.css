@@ -269,6 +269,11 @@ div.description:empty {
   /* No need to handle whether it is empty because if it isn't provided it won't exist */
 }
 
+.image {
+  max-height: 225px;
+  width: auto;
+}
+
 .episode-description img,
 .description img {
   max-height: 225px;
@@ -421,6 +426,7 @@ table {
 .playlist.spins .spin-time,
 .public-spins .spin-time {
   width: 0rem;
+  font-size: 0.8rem;
   /* Override default width making width actual width of time (instead of fixed width) */
 }
 
@@ -570,6 +576,13 @@ tr[id^="sp-"] td.spin-time {
 }
 
 
+
+/* Coming Up */
+.show-time {
+  text-align: center;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
 
 /* DJ Persona Page */
 
