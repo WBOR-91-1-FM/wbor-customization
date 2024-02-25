@@ -1,13 +1,12 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Your existing JavaScript code here
 
         function updateTabTitle() {
             var websocketUrl = 'wss://listen.wbor.org/api/live/nowplaying/websocket';
             var retryInterval = 5000; // 5 seconds
             var streamdiv = document.getElementById('streamdiv');
             var recentlyplayeddiv = document.getElementById('recentlyplayeddiv');
-            var fallbackContent = document.getElementById('fallbackContent');
+            // var fallbackContent = document.getElementById('fallbackContent');
             var websocket;
 
             function createWebSocket() {
@@ -25,7 +24,7 @@
 
             function handleWebSocketOpen(event) {
                 console.log('WebSocket connection opened.');
-                fallbackContent.style.display = 'none';
+                // fallbackContent.style.display = 'none';
                 streamdiv.style.display = 'revert';
                 recentlyplayeddiv.style.display = 'revert';
 
@@ -63,7 +62,7 @@
             function handleWebSocketClose(event) {
                 console.log('WebSocket connection failed.');
                 document.title = "WBOR 91.1 FM - Bowdoin College Polar Bear Radio";
-                fallbackContent.style.display = 'block';
+                // fallbackContent.style.display = 'block';
                 streamdiv.style.display = 'none';
                 recentlyplayeddiv.style.display = 'none';
                 retry();
