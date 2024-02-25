@@ -1,10 +1,12 @@
+<!-- No longer used -->
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var streamplayer = document.getElementById('streamplayer');
         var streamdiv = document.getElementById('streamdiv');
         var recentlyplayeddiv = document.getElementById('recentlyplayeddiv');
 
-        var fallbackContent = document.getElementById('fallbackContent');
+        // var fallbackContent = document.getElementById('fallbackContent');
         var loadTimeout;
 
         // Add a load event listener to the iframe
@@ -17,7 +19,7 @@
         loadTimeout = setTimeout(function () {
             // Check if the body of the iframe is empty after 4 seconds
             if (streamplayer.contentDocument.body.children.length === 0) {
-                fallbackContent.style.display = 'block';
+                // fallbackContent.style.display = 'block';
                 streamdiv.style.display = 'none';
                 recentlyplayeddiv.style.display = 'none';
             }
