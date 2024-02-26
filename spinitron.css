@@ -263,6 +263,8 @@ div.description:empty {
 
 .artist {
   font-weight: 500;
+  margin-right: 0.333rem;
+  /* Right margin since whitespace isn't shown with .spin having display: flex */
 }
 
 .current-playlist {
@@ -544,12 +546,18 @@ tr[id^="sp-"] td.spin-time {
   /* Decorate "Maine-Based Artist" text */
 }
 
+.spin {
+  display: flex;
+  align-items: center;
+  /* Flex to allow .new to align vertically */
+}
+
 .new {
   text-shadow: 0rem 0rem 0.75rem #F00,
     0rem 0rem 0.75rem #F00,
     0rem 0rem 0.75rem #F00;
   white-space: nowrap;
-  padding: 0.5rem;
+  margin-left: 0.666rem;
   /* Decorate "New Release" text */
 }
 
