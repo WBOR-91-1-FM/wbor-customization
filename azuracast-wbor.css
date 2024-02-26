@@ -115,7 +115,7 @@ svg:hover {
         background-color: red;
         margin-right: 1rem;
         box-shadow: 0rem 0rem 0.5rem #F00, 0rem 0rem 0.5rem #F00, 0rem 0rem 0.5rem #F00;
-        animation: pulsate 3s ease-in-out infinite;
+        animation: pulsate 2.5s ease-in-out infinite;
     }
 }
 
