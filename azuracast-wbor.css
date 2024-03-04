@@ -40,13 +40,15 @@ svg:hover {
 .now-playing-main {
     display: flex;
     align-items: center;
-    padding-left: 1rem;
-    padding-right: 0.666rem;
+    margin-left: 0.8rem;
+    margin-right: 0.666rem;
     overflow: hidden;
 }
 
 .now-playing-main div {
     max-width: 100%;
+    margin-left: 0rem;
+    padding-right: 0rem;
 }
 
 /* Stream Player: Hide the volume control and stream selector (in the case we ever get more than one mount point) */
@@ -106,9 +108,25 @@ svg:hover {
         height: 0.66rem;
         border-radius: 50%;
         background-color: red;
-        margin-right: 1rem;
+        position: absolute;
         box-shadow: 0rem 0rem 0.5rem #F00, 0rem 0rem 0.5rem #F00, 0rem 0rem 0.5rem #F00;
         animation: pulsate 2.5s ease-in-out infinite;
+        
+    }
+    
+    .now-playing-main div {
+        margin-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+
+#station-history .song .date-played {
+    display: none;
+}
+
+@media (min-width: 378px) {
+    #station-history .song .date-played {
+        display: flex !important;
     }
 }
 
