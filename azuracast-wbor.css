@@ -184,6 +184,14 @@ h5 {
     width: 100% !important;
 }
 
+.name strong {
+    font-weight: 600;
+}
+
+.name span {
+    font-weight: 300;
+}
+
 .now-playing-title:hover,
 .now-playing-artist:hover {
     text-overflow: ellipsis !important;

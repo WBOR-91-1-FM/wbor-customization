@@ -264,7 +264,7 @@ div.description:empty {
 }
 
 .artist {
-  font-weight: 500;
+  font-weight: 600 !important;
 }
 
 .current-playlist {
