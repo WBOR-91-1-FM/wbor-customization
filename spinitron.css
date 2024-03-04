@@ -499,7 +499,13 @@ tr[id^="sp-"] td.spin-time {
   .parenthesis {
     display: none;
   }
+  /* Hide detailed info to fit better on small screens */
+}
 
+@media (max-width: 462px) {
+  .spin-time {
+    display: none;
+  }
   /* Hide detailed info to fit better on small screens */
 }
 
@@ -690,7 +696,6 @@ html body.public.dj.vsc-initialized div.spinitron-page-container div.main-contai
 }
 
 @media (max-width: 560px) {
-
   .spin-cal .fc-left,
   .spin-cal .fc-right {
     flex-basis: 50%;
