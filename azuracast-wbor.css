@@ -122,6 +122,8 @@ svg:hover {
 
 #station-history .song .date-played {
     display: none;
+    font-weight: 300;
+    /* Don't display unless screen is wide enough, and match Spinitron font weight */
 }
 
 @media (min-width: 378px) {
