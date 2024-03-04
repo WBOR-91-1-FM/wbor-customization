@@ -154,17 +154,19 @@ html body.public.calendar.vsc-initialized div.spinitron-page-container div.main-
   /* Hide logo for now */
 }
 
-.view-page .head>div:nth-child(2).image>img {
-  border: 0px;
-  border-radius: 0.5rem;
-  /* Remove default border and correct radius for show/persona images */
+.image {
+  max-height: 225px;
+  max-width: 225px;
+  display: flex;
 }
 
 .image img {
   aspect-ratio: 1 / 1;
   object-fit: cover !important;
   width: 100% !important;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem !important;
+  border: 0 !important;
+  /* Remove default border and correct radius for show/persona images */
   /* Keep square */
 }
 
@@ -263,8 +265,6 @@ div.description:empty {
 
 .artist {
   font-weight: 500;
-  margin-right: 0.333rem;
-  /* Right margin since whitespace isn't shown with .spin having display: flex */
 }
 
 .current-playlist {
@@ -278,11 +278,6 @@ div.description:empty {
   padding-top: 0.75rem;
   border-top: dashed 1px rgba(255, 255, 255, 0.271);
   /* No need to handle whether it is empty because if it isn't provided it won't exist */
-}
-
-.image {
-  max-height: 225px;
-  width: auto;
 }
 
 .episode-description img,
@@ -453,28 +448,9 @@ body.public .table td {
 .playlist.spins .table-striped tr.active,
 .public-spins .active,
 .public-spins .table-striped tr.active {
-  background-color: inherit;
-  /* Disable default highlighting when clicking timestamp of a spin */
-}
-
-.playlist.spins .table-striped tr.active .spin-art,
-.public-spins .table-striped tr.active .spin-art {
-  background: rgba(255, 245, 157, 0.21);
-  /* Background album art of spin */
-}
-
-.playlist.spins .table-striped tr.active .spin-time,
-.public-spins .table-striped tr.active .spin-time {
-  background: rgba(255, 245, 157, 0.21);
-  border-radius: 0.5rem 0 0 0.5rem;
-  /* (Continue from above) left side */
-}
-
-.playlist.spins .table-striped tr.active .spin-text,
-.public-spins .table-striped tr.active .spin-text {
-  background: rgba(255, 245, 157, 0.21);
-  border-radius: 0 0.5rem 0.5rem 0;
-  /* (Continue from above) right side */
+  background-color: rgba(255, 245, 157, 0.21);
+  border-radius: 0.5rem;
+  /* Highlighting when clicking timestamp of a spin */
 }
 
 tr[id^="sp-"] td.spin-time {
@@ -546,18 +522,12 @@ tr[id^="sp-"] td.spin-time {
   /* Decorate "Maine-Based Artist" text */
 }
 
-.spin {
-  display: flex;
-  align-items: center;
-  /* Flex to allow .new to align vertically */
-}
-
 .new {
   text-shadow: 0rem 0rem 0.75rem #F00,
     0rem 0rem 0.75rem #F00,
     0rem 0rem 0.75rem #F00;
   white-space: nowrap;
-  margin-left: 0.666rem;
+  margin-left: 0.5rem;
   /* Decorate "New Release" text */
 }
 
@@ -770,3 +740,24 @@ html body.public.dj.vsc-initialized div.spinitron-page-container div.main-contai
   width: fit-content;
   /* Otherwise, sometimes "12AM" or similar will be clipped */
 }
+
+.spin-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.333rem;
+  margin-top: 0.333rem;
+}
+
+.spin-time, .spin-art {
+  width: fit-content !important;
+}
+
+.spin-text {
+  width: 100% !important;
+}
+
+.spin-time {
+  order: 3;
+}
+
+/* add more padding to the left of time */
