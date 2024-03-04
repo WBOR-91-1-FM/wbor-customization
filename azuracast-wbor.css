@@ -36,11 +36,17 @@ svg:hover {
     /* Not necessary but reduces flexbox size */
 }
 
-/* Stream Player: ensure sizing even in case of no title */
+/* Stream Player */
 .now-playing-main {
-    padding-right: 1rem;
+    display: flex;
+    align-items: center;
     padding-left: 1rem;
-    min-width: 20vi;
+    padding-right: 0.666rem;
+    overflow: hidden;
+}
+
+.now-playing-main div {
+    max-width: 100%;
 }
 
 /* Stream Player: Hide the volume control and stream selector (in the case we ever get more than one mount point) */
@@ -89,24 +95,11 @@ svg:hover {
     /* Increase size */
 }
 
-/* Stream Player: handle overflow */
-.now-playing-title,
-.now-playing-artist {
-    text-overflow: ellipsis !important;
-    overflow: hidden !important;
-    white-space: nowrap !important;
-}
-
 .now-playing-title {
     font-weight: bolder;
 }
 
-.now-playing-main {
-    display: flex;
-    align-items: center;
-}
-
-@media (min-width: 322px) {
+@media (min-width: 422px) {
     .now-playing-main::before {
         content: "";
         width: 0.66rem;
@@ -134,7 +127,7 @@ svg:hover {
 }
 
 .now-playing-details {
-    max-width: 81vw;
+    max-width: 78vw;
     /* Making compatible even with the original iPhone resolution width */
 }
 
@@ -169,6 +162,12 @@ h5 {
     overflow: hidden !important;
     white-space: nowrap !important;
     width: 100% !important;
+}
+
+.now-playing-title:hover,
+.now-playing-artist:hover {
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
 }
 
 strong,
