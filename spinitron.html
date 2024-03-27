@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0>
-<title>WBOR 91.1 FM – Playlists &amp; Archives</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WBOR 91.1 FM - Playlists & Archives</title>
 <base href=" https://wbor.org">
 
 
@@ -26,5 +26,15 @@
         </div>
     </div>
 </body>
+
+<script>
+    window.onload = function () {
+        var categoryElement = document.querySelector('.show-categoty');
+
+        if (categoryElement.textContent.trim() === "Automation" || categoryElement.textContent.trim() === "_____") {
+            categoryElement.style.display = "none";
+        }
+    };
+</script>
 
 </html>

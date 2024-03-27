@@ -96,11 +96,11 @@ a:hover {
   /* Decorate urls to match */
 }
 
-div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(4) a::before {
+div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(3) a::before {
   content: "(";
 }
 
-div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(4) a::after {
+div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(3) a::after {
   content: ")";
 }
 
@@ -198,7 +198,7 @@ div.head:nth-child(1)>div:nth-child(1) {
   /* (We don't display one, but if we did, it should go here) */
 }
 
-div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(4) {
+div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(3) {
   order: 3;
   /* Calendar and website url below station name */
 }
@@ -208,10 +208,10 @@ div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(4) {
   /* Seperator between "calendar" and "wbor.org" */
 }
 
-.station-description {
+/* .station-description {
   order: 4;
   margin-top: 1em !important;
-}
+} */
 
 .ark-play-button {
   display: none;
@@ -499,6 +499,7 @@ tr[id^="sp-"] td.spin-time {
   .parenthesis {
     display: none;
   }
+
   /* Hide detailed info to fit better on small screens */
 }
 
@@ -506,6 +507,7 @@ tr[id^="sp-"] td.spin-time {
   .spin-time {
     display: none;
   }
+
   /* Hide detailed info to fit better on small screens */
 }
 
@@ -696,6 +698,7 @@ html body.public.dj.vsc-initialized div.spinitron-page-container div.main-contai
 }
 
 @media (max-width: 560px) {
+
   .spin-cal .fc-left,
   .spin-cal .fc-right {
     flex-basis: 50%;
@@ -753,7 +756,8 @@ html body.public.dj.vsc-initialized div.spinitron-page-container div.main-contai
   margin-top: 0.333rem;
 }
 
-.spin-time, .spin-art {
+.spin-time,
+.spin-art {
   width: fit-content !important;
 }
 
