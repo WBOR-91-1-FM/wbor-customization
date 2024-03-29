@@ -697,6 +697,16 @@ html body.public.dj.vsc-initialized div.spinitron-page-container div.main-contai
   /* Background color for date header in cal list view on mobile */
 }
 
+.fc-unthemed td.fc-today {
+  background: #ff49a76e;
+  /* Highlight the column background for the current day */
+}
+
+.fc-time-grid .fc-slats .fc-minor td {
+  border-top-style: hidden;
+  /* Hide half hour border marker */
+}
+
 @media (max-width: 560px) {
 
   .spin-cal .fc-left,
