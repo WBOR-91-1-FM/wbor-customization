@@ -3,7 +3,7 @@
         // Your existing JavaScript code here
 
         function updateTabTitle() {
-            var websocketUrl = 'wss://listen.wbor.org/api/live/nowplaying/websocket';
+            var websocketUrl = 'wss://azura.wbor.org/api/live/nowplaying/websocket';
             var retryInterval = 5000; // 5 seconds
             var streamdiv = document.getElementById('streamdiv');
             var recentlyplayeddiv = document.getElementById('recentlyplayeddiv');
