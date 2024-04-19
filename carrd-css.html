@@ -1,16 +1,24 @@
 <style>
-    .style1.links a::before,
-    .style3.links a::before,
-    .style2.concert-links.links a::before {
-        content: "(";
-        /* Stylize with CSS rather than the link field itself */
+
+    #navbar {
+        margin-bottom: 0.5rem !important;
     }
-    
-    .style1.links a::after,
-    .style3.links a::after,
-    .style2.concert-links.links {
-        content: ")";
-        /* Stylize with CSS rather than the link field itself */
+
+    .textbutton .concert-links a {
+        position: relative;
+    }
+
+    .textbutton a::before,
+    .concert-links a::before {
+        content: "";
+        position: absolute;
+        top: -0.1rem;
+        bottom: -0.25rem;
+        left: -0.35rem;
+        right: -0.35rem;
+        background-color: #7373733b;
+        z-index: -1;
+        border-radius: 0.5rem;
     }
 
     .concert-links,
