@@ -39,7 +39,7 @@
                                 document.title = "WBOR 91.1 FM - Bowdoin College Polar Bear Radio";
                             } else {
                                 // Concatenate "title" and "artist"
-                                var concatenatedTitle = currentSongTitle + ' - ' + currentSongArtist;
+                                var concatenatedTitle = currentSongTitle + ' - ' + currentSongArtist + ' | WBOR 91.1 FM';
                                 console.log('Current Song Title:', concatenatedTitle);
                                 document.title = concatenatedTitle;
                             }
