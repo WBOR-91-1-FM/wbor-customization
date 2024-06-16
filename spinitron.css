@@ -90,18 +90,40 @@ a:hover {
   transition: color 0.125s ease;
 }
 
+nav > ul > li > a {
+  position: relative;
+  font-weight: 400;
+  /* Match wbor.org special link style */
+}
+
+nav > ul > li > a::before {
+  content: "";
+  position: absolute;
+  top: -0.1rem;
+  bottom: -0.25rem;
+  left: -0.35rem;
+  right: -0.35rem;
+  background-color: #7373733b;
+  z-index: -1;
+  border-radius: 0.5rem;
+  /* Match wbor.org special link style */
+}
+
+.view-page .head nav>ul>li:not(:first-child)::before {
+  content: "" !important;
+  margin: 0.66rem !important;
+  /* Remove default `-` and add spacing between links */
+}
+
+.view-page .head>div:first-child .station-slogan {
+  margin-bottom: 0.5rem !important;
+  /* Add some room below the slogan */
+}
+
 .view-page .head nav>ul>li>a {
   text-decoration: underline;
   text-transform: lowercase;
   /* Decorate urls to match */
-}
-
-div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(3) a::before {
-  content: "(";
-}
-
-div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(3) a::after {
-  content: ")";
 }
 
 .show-time,
