@@ -5,11 +5,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WBOR 91.1 FM - Playlists & Archives</title>
-<base href=" https://wbor.org">
-
-
+    <title>WBOR 91.1 FM – Playlists & Archives</title>
+    <base href=" https://wbor.org">
     <meta name="theme-color" content="#0E1111">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("td").each(function () {
+                var tdText = $(this).html();
+                var newText = tdText.replace("(_CHANGE ME CHANGE ME CHANGE ME CHANGE ME CHANGE ME CHANGE ME CHANGE ME CHANGE ME CHANGE ME CHANGE ME)", "");
+                $(this).html(newText);
+            });
+        });
+    </script>
 </head>
 
 <body class="public station">
@@ -19,22 +28,22 @@
             <div class="main wrapper clearfix">
                 <div id="notifications-w3" class="notifications"></div>
 
-
                 {{SPINITRON_CONTENT}}
 
             </div>
         </div>
     </div>
+
+    <script>
+        window.onload = function () {
+            var categoryElement = document.querySelector('.show-categoty');
+
+            if (categoryElement.textContent.trim() === "_CHANGE ME CHANGE ME CHANGE ME CHANGE ME CHANGE ME CHANGE ME CHANGE ME CHANGE ME CHANGE ME CHANGE ME" || categoryElement.textContent.trim() === "_____") {
+                categoryElement.style.display = "none";
+            }
+        };
+    </script>
+
 </body>
-
-<script>
-    window.onload = function () {
-        var categoryElement = document.querySelector('.show-categoty');
-
-        if (categoryElement.textContent.trim() === "Automation" || categoryElement.textContent.trim() === "_____") {
-            categoryElement.style.display = "none";
-        }
-    };
-</script>
 
 </html>
