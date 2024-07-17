@@ -1,3 +1,5 @@
+// Add placeholder text to the contact form
+
 function changePlaceholders() {
     var nameInput = document.getElementById("contact-name");
     var emailInput = document.getElementById("contact-email");
