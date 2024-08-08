@@ -1,6 +1,5 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Your existing JavaScript code here
 
         function updateTabTitle() {
             var websocketUrl = 'wss://azura.wbor.org/api/live/nowplaying/websocket';
@@ -11,18 +10,15 @@
             function createWebSocket() {
                 var websocket = new WebSocket(websocketUrl);
 
-                // Connection event
                 websocket.addEventListener('open', function (event) {
                     console.log('WebSocket connection opened.');
                     streamdiv.style.display = 'revert';
                     recentlyplayeddiv.style.display = 'revert';
 
-                    // Send the connection string
                     var connectionData = { "subs": { "station:wbor": {} } };
                     websocket.send(JSON.stringify(connectionData));
                 });
 
-                // Message event
                 websocket.addEventListener('message', function (event) {
                     try {
                         var data = JSON.parse(event.data);
@@ -80,7 +76,6 @@
             }
         }
 
-// Call the function initially and update it as needed
 updateTabTitle();
 });
 </script>
