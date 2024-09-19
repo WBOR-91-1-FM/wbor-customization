@@ -126,6 +126,11 @@ svg:hover {
     /* Don't display unless screen is wide enough, and match Spinitron font weight */
 }
 
+#station-history .song {
+    margin-bottom: 0.7rem !important;
+    /* Prevent some unicode characters from expanding too high in height */
+}
+
 @media (min-width: 378px) {
     #station-history .song .date-played {
         display: flex !important;
