@@ -8,6 +8,11 @@
    * remove show/DJ photos on mobile
 */
 
+.main-container {
+  padding-bottom: 1rem !important
+  /* Reduce bottom spacing on homepage */
+}
+
 .ark-player {
   width: 80%;
 }
@@ -658,7 +663,7 @@ html body.public.dj.vsc-initialized div.spinitron-page-container div.main-contai
 @media (max-width: 560px) {
   .playlist-list .show {
     white-space: nowrap;
-    max-width: 165px;
+    max-width: 132px;
     overflow: clip;
     text-overflow: ellipsis
   }
