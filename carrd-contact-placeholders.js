@@ -1,3 +1,5 @@
+// This stopped working? Need to fix at some point
+
 // Add placeholder text to the contact form
 
 function changePlaceholders() {
