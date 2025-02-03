@@ -1,5 +1,37 @@
-<!-- TODO: implement dynamic iframe resizing: https://gist.github.com/Moonbase59/fbe49e4be4ea9e833f29e94c8526455f -->
+<center>
+    <div id="stream-container">
+        <iframe title="WBOR online stream" id="streamplayer"
+            src="https://azura.wbor.org/public/wbor/embed?theme=dark&volume=100"
+            style="width: 100%; height: 97px; display: flex; border: 0;" loading="eager">
+        </iframe>
+    </div>
+    <h2 id="offline-message" class="style11" style="display: none;">
+        WBOR is not currently broadcasting (check back later...)
+    </h2>
+</center>
 
-<center><iframe title="WBOR online stream" id="streamplayer"
-                src="https://azura.wbor.org/public/wbor/embed?theme=dark&volume=100"
-                style="width: 100%; height: 97px; display: flex; border: 0;" loading="eager"></iframe>
+<script>
+    async function checkStreamStatus() {
+        try {
+            const response = await fetch('https://azura.wbor.org/api/station/2/nowplaying');
+            const data = await response.json();
+            const isLive = data?.live?.is_live;
+
+            if (isLive) {
+                document.getElementById('streamplayer').style.display = 'flex';
+                document.getElementById('offline-message').style.display = 'none';
+            } else {
+                document.getElementById('streamplayer').style.display = 'none';
+                document.getElementById('offline-message').style.display = 'block';
+            }
+        } catch (error) {
+            console.error('Error fetching stream status:', error);
+        }
+    }
+
+    // Initial check
+    checkStreamStatus();
+
+    // Check every 60 seconds
+    setInterval(checkStreamStatus, 60000);
+</script>
