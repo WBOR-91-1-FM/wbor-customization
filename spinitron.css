@@ -574,6 +574,10 @@ tr[id^="sp-"] td.spin-time {
   display: none;
 }
 
+.label {
+  display: none;
+}
+
 .released::before {
   content: "(" !important;
 }
