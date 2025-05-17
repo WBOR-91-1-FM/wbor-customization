@@ -1,56 +1,67 @@
+<!-- This file is version controlled! -->
+<!-- Ensure that if you make changes that they are updated here: -->
+<!-- https://github.com/WBOR-91-1-FM/wbor-customization/blob/main/carrd-visibilitycontrol.html -->
+
 <style>
-    .hidden {
-        display: none;
-        overflow: hidden;
-    }
+  .hidden {
+    display: none;
+    overflow: hidden;
+  }
 </style>
 
 <script>
-    function visCtrl(...args) {
-        for (let i = 0; i < args.length; i += 2) {
-            const action = args[i];
-            const elementId = args[i + 1];
-            const element = document.getElementById(elementId);
+  function visCtrl(...args) {
+    for (let i = 0; i < args.length; i += 2) {
+      const action = args[i];
+      const elementId = args[i + 1];
+      const element = document.getElementById(elementId);
 
-            if (!element) {
-                console.error('Element with id ' + elementId + ' not found.');
-                continue;
-            }
+      if (!element) {
+        console.error("Element with id " + elementId + " not found.");
+        continue;
+      }
 
-            switch (action) {
-                case 'hide':
-                    element.style.maxHeight = '0';
-                    element.classList.add('hidden');
-                    break;
+      switch (action) {
+        case "hide":
+          element.style.maxHeight = "0";
+          element.classList.add("hidden");
+          break;
 
-                case 'show':
-                    element.style.maxHeight = '';
-                    element.classList.remove('hidden');
-                    break;
+        case "show":
+          element.style.maxHeight = "";
+          element.classList.remove("hidden");
+          break;
 
-                case 'toggle':
-                    if (element.classList.contains('hidden')) {
-                        element.style.maxHeight = '';
-                        element.classList.remove('hidden');
-                    } else {
-                        element.style.maxHeight = '0';
-                        element.classList.add('hidden');
-                    }
-                    break;
+        case "toggle":
+          if (element.classList.contains("hidden")) {
+            element.style.maxHeight = "";
+            element.classList.remove("hidden");
+          } else {
+            element.style.maxHeight = "0";
+            element.classList.add("hidden");
+          }
+          break;
 
-                default:
-                    console.error('Invalid action: ' + action);
-            }
-        }
-    }
-
-    // Close dropdowns when the Escape key is pressed
-    function handleEscapeKey(event) {
-      if (event.key === 'Escape') {
-        visCtrl("hide","recentlyplayed", "hide","faq", "hide","listening-methods")
+        default:
+          console.error("Invalid action: " + action);
       }
     }
+  }
 
-    // Adding the event listener to the document
-    document.addEventListener('keydown', handleEscapeKey);
+  // Close dropdowns when the Escape key is pressed
+  function handleEscapeKey(event) {
+    if (event.key === "Escape") {
+      visCtrl(
+        "hide",
+        "recentlyplayed",
+        "hide",
+        "faq",
+        "hide",
+        "listening-methods"
+      );
+    }
+  }
+
+  // Adding the event listener to the document
+  document.addEventListener("keydown", handleEscapeKey);
 </script>

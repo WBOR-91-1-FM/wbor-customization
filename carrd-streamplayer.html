@@ -1,16 +1,24 @@
+<!-- This file is version controlled! -->
+<!-- Ensure that if you make changes that they are updated here: -->
+<!-- https://github.com/WBOR-91-1-FM/wbor-customization/blob/main/carrd-streamplayer.html -->
+
 <center>
-    <div id="stream-container">
-        <iframe title="WBOR online stream" id="streamplayer"
-            src="https://azura.wbor.org/public/wbor/embed?theme=dark&volume=100"
-            style="width: 100%; height: 97px; display: flex; border: 0;" loading="eager">
-        </iframe>
-    </div>
-    <h2 id="offline-message" class="style11" style="display: none;">
-        WBOR is not currently broadcasting (check back later...)
-    </h2>
+  <div id="stream-container">
+    <iframe
+      title="WBOR online stream"
+      id="streamplayer"
+      src="https://azura.wbor.org/public/wbor/embed?theme=dark&volume=100"
+      style="width: 100%; height: 97px; display: flex; border: 0"
+      loading="eager"
+    >
+    </iframe>
+  </div>
+  <h2 id="offline-message" class="style11" style="display: none">
+    WBOR is not currently broadcasting (check back later...)
+  </h2>
 </center>
 
-<script>
+<!-- <script>
     async function checkStreamStatus() {
         try {
             const response = await fetch('https://azura.wbor.org/api/station/2/nowplaying');
@@ -46,4 +54,4 @@
 
     // Check every 5 seconds
     setInterval(checkStreamStatus, 5000);
-</script>
+</script> -->

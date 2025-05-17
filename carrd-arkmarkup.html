@@ -1,90 +1,129 @@
-<div id="ark-container" style="display: flex;justify-content: center;">
-    <div class="ark-player" id="ark-player" style="margin-top: 0;">
-        <audio class="ark-player__media-element" width="1" height="1"></audio>
-        <div class="ark-player__control">
-            <button class="ark-player__play" aria-label="Play (k)" title="Play (k)">
-                <svg width="100%" height="100%" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M1576 927l-1328 738q-23 13-39.5 3t-16.5-36v-1472q0-26 16.5-36t39.5 3l1328 738q23 13 23 31t-23 31z" />
-                </svg>
-            </button>
-            <button class="ark-player__pause ark-player_hide" aria-label="Pause (k)" title="Play (k)">
-                <svg width="100%" height="100%" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M1664 192v1408q0 26-19 45t-45 19h-512q-26 0-45-19t-19-45v-1408q0-26 19-45t45-19h512q26 0 45 19t19 45zm-896 0v1408q0 26-19 45t-45 19h-512q-26 0-45-19t-19-45v-1408q0-26 19-45t45-19h512q26 0 45 19t19 45z" />
-                </svg>
-            </button>
-        </div>
+<!-- This file is version controlled! -->
+<!-- Ensure that if you make changes that they are updated here: -->
+<!-- https://github.com/WBOR-91-1-FM/wbor-customization/blob/main/carrd-arkmarkup.html -->
 
-        <div class="ark-player__volume-control">
-            <button class="ark-player__mute-button" aria-label="Mute (m)" title="Mute (m)">
-                <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
-                    <path class="ark-player__volume-speaker"
-                        d="M8,21 L12,21 L17,26 L17,10 L12,15 L8,15 L8,21 Z M19,14 L19,22 C20.48,21.32 21.5,19.77 21.5,18 C21.5,16.26 20.48,14.74 19,14 ZM19,11.29 C21.89,12.15 24,14.83 24,18 C24,21.17 21.89,23.85 19,24.71 L19,26.77 C23.01,25.86 26,22.28 26,18 C26,13.72 23.01,10.14 19,9.23 L19,11.29 Z">
-                    </path>
-                    <path class="ark-player__volume-slash" d="M 9.25,9 7.98,10.27 24.71,27 l 1.27,-1.27 Z"
-                        style="display: none;"></path>
-                </svg>
-            </button>
-            <div class="ark-player__volume-area"><input class="ark-player__volume-slider" type="range" min="0" max="100"
-                    value="100" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"
-                    aria-valuetext="100% volume"></div>
-        </div>
-
-        <div class="ark-player__picker">
-            <div class="ark-player__date">
-                <select name="date" class="select-css"></select>
-            </div>
-
-            <div class="ark-player__time">
-                <select name="hours" class="select-css"></select>
-                <select name="minutes" class="select-css"></select>
-            </div>
-        </div>
-
-        <div class="ark-player__status ark-player_hide">
-            <div class="ark-player__date">--/--/--</div>
-            <div class="ark-player__time">-:--:-- --</div>
-        </div>
-        <div class="ark-player__mode-hint"></div>
+<div id="ark-container" style="display: flex; justify-content: center">
+  <div class="ark-player" id="ark-player" style="margin-top: 0">
+    <audio class="ark-player__media-element" width="1" height="1"></audio>
+    <div class="ark-player__control">
+      <button class="ark-player__play" aria-label="Play (k)" title="Play (k)">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 1792 1792"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1576 927l-1328 738q-23 13-39.5 3t-16.5-36v-1472q0-26 16.5-36t39.5 3l1328 738q23 13 23 31t-23 31z"
+          />
+        </svg>
+      </button>
+      <button
+        class="ark-player__pause ark-player_hide"
+        aria-label="Pause (k)"
+        title="Play (k)"
+      >
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 1792 1792"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1664 192v1408q0 26-19 45t-45 19h-512q-26 0-45-19t-19-45v-1408q0-26 19-45t45-19h512q26 0 45 19t19 45zm-896 0v1408q0 26-19 45t-45 19h-512q-26 0-45-19t-19-45v-1408q0-26 19-45t45-19h512q26 0 45 19t19 45z"
+          />
+        </svg>
+      </button>
     </div>
+
+    <div class="ark-player__volume-control">
+      <button
+        class="ark-player__mute-button"
+        aria-label="Mute (m)"
+        title="Mute (m)"
+      >
+        <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
+          <path
+            class="ark-player__volume-speaker"
+            d="M8,21 L12,21 L17,26 L17,10 L12,15 L8,15 L8,21 Z M19,14 L19,22 C20.48,21.32 21.5,19.77 21.5,18 C21.5,16.26 20.48,14.74 19,14 ZM19,11.29 C21.89,12.15 24,14.83 24,18 C24,21.17 21.89,23.85 19,24.71 L19,26.77 C23.01,25.86 26,22.28 26,18 C26,13.72 23.01,10.14 19,9.23 L19,11.29 Z"
+          ></path>
+          <path
+            class="ark-player__volume-slash"
+            d="M 9.25,9 7.98,10.27 24.71,27 l 1.27,-1.27 Z"
+            style="display: none"
+          ></path>
+        </svg>
+      </button>
+      <div class="ark-player__volume-area">
+        <input
+          class="ark-player__volume-slider"
+          type="range"
+          min="0"
+          max="100"
+          value="100"
+          role="slider"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="100"
+          aria-valuetext="100% volume"
+        />
+      </div>
+    </div>
+
+    <div class="ark-player__picker">
+      <div class="ark-player__date">
+        <select name="date" class="select-css"></select>
+      </div>
+
+      <div class="ark-player__time">
+        <select name="hours" class="select-css"></select>
+        <select name="minutes" class="select-css"></select>
+      </div>
+    </div>
+
+    <div class="ark-player__status ark-player_hide">
+      <div class="ark-player__date">--/--/--</div>
+      <div class="ark-player__time">-:--:-- --</div>
+    </div>
+    <div class="ark-player__mode-hint"></div>
+  </div>
 </div>
 
 <style>
-    .ark-player-feedback,
-    .ark-player__volume-control,
-    .ark-player__mode-hint {
-        display: none;
-        /* Hide link to Spinitron forum and volume control */
-    }
+  .ark-player-feedback,
+  .ark-player__volume-control,
+  .ark-player__mode-hint {
+    display: none;
+    /* Hide link to Spinitron forum and volume control */
+  }
 
-    .ark-player {
-        margin-bottom: 1em;
-        /* Add spacing below to match spacing in rest of site */
-        display: flex
-            /* Centers player, for some reason */
-    }
+  .ark-player {
+    margin-bottom: 1em;
+    /* Add spacing below to match spacing in rest of site */
+    display: flex;
+    /* Centers player, for some reason */
+  }
 
-    #ark-player {
-        margin-left: auto;
-        margin-right: auto;
-        /* Center it */
-        border-radius: 0.5rem;
-        /* Round corners */
-    }
+  #ark-player {
+    margin-left: auto;
+    margin-right: auto;
+    /* Center it */
+    border-radius: 0.5rem;
+    /* Round corners */
+  }
 
-    .ark-player__date .select-css,
-    .ark-player__time .select-css {
-        background: #EEE;
-        color: #0E1111;
-        border-radius: 0.5rem;
-        /* Match rest of site styling */
-    }
+  .ark-player__date .select-css,
+  .ark-player__time .select-css {
+    background: #eee;
+    color: #0e1111;
+    border-radius: 0.5rem;
+    /* Match rest of site styling */
+  }
 
-    .ark-player__picker .ark-player__date .select-css[name="date"],
-    .ark-player__picker .ark-player__time .select-css[name="hours"],
-    .ark-player__picker .ark-player__time .select-css[name="minutes"] {
-        width: fit-content;
-        /* Otherwise, sometimes "12AM" or similar will be clipped */
-    }
+  .ark-player__picker .ark-player__date .select-css[name="date"],
+  .ark-player__picker .ark-player__time .select-css[name="hours"],
+  .ark-player__picker .ark-player__time .select-css[name="minutes"] {
+    width: fit-content;
+    /* Otherwise, sometimes "12AM" or similar will be clipped */
+  }
 </style>

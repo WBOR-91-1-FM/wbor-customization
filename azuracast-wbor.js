@@ -1,6 +1,6 @@
-// This file is version controlled!
-// Ensure that if you make changes that they are updated here:
-// https://github.com/WBOR-91-1-FM/wbor-customization/blob/main/carrd-titlebar-nowplaying.js
+/* This file is version controlled! */
+/* Ensure that if you make changes that they are updated here: */
+/* https://github.com/WBOR-91-1-FM/wbor-customization/blob/main/azuracast-wbor.js */
 
 document.addEventListener("DOMContentLoaded", function () {
   var websocketUrl = "wss://azura.wbor.org/api/live/nowplaying/websocket";

@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* This file is version controlled! */
+/* Ensure that if you make changes that they are updated here: */
+/* https://github.com/WBOR-91-1-FM/wbor-customization/blob/main/spinitron.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /* TO-DO: 
    * fix slight vertical misalignment of text and album art (bottom of icons jut down too much)
@@ -9,7 +13,7 @@
 */
 
 .main-container {
-  padding-bottom: 1rem !important
+  padding-bottom: 1rem !important;
   /* Reduce bottom spacing on homepage */
 }
 
@@ -18,9 +22,8 @@
 }
 
 body.public .wrapper {
-  width: 90%
+  width: 90%;
 }
-
 
 /* Calendar Colors */
 
@@ -70,28 +73,26 @@ body.public .wrapper {
   background-color: #c0abc0 !important;
 }
 
-
-
 /* wbor.org Styling */
 
 body.public {
-  color: #EEE;
-  background: #0E1111;
+  color: #eee;
+  background: #0e1111;
 }
 
 body {
-  font-family: 'Inter', 'Arial' !important;
+  font-family: "Inter", "Arial" !important;
   letter-spacing: 0.025rem !important;
   font-weight: 300 !important;
   /* Match WBOR font */
 }
 
 a {
-  color: #BADAFF;
+  color: #badaff;
 }
 
 a:hover {
-  color: #7599FF;
+  color: #7599ff;
   transition: color 0.125s ease;
 }
 
@@ -114,18 +115,18 @@ nav > ul > li > a::before {
   /* Match wbor.org special link style */
 }
 
-.view-page .head nav>ul>li:not(:first-child)::before {
+.view-page .head nav > ul > li:not(:first-child)::before {
   content: "" !important;
   margin: 0.66rem !important;
   /* Remove default `-` and add spacing between links */
 }
 
-.view-page .head>div:first-child .station-slogan {
+.view-page .head > div:first-child .station-slogan {
   margin-bottom: 0.5rem !important;
   /* Add some room below the slogan */
 }
 
-.view-page .head nav>ul>li>a {
+.view-page .head nav > ul > li > a {
   text-decoration: underline;
   text-transform: lowercase;
   /* Decorate urls to match */
@@ -133,7 +134,7 @@ nav > ul > li > a::before {
 
 .show-time,
 .spin-time {
-  color: #A8A8A8 !important;
+  color: #a8a8a8 !important;
   /* Match other text */
 }
 
@@ -146,11 +147,9 @@ nav > ul > li > a::before {
 .playlist.spins .spin-text .release::before,
 .public-spins .spin-text .release::before,
 .public-spins .spin-text .parenthesis {
-  color: #A8A8A8;
+  color: #a8a8a8;
   /* Match secondary text color "from" and "(Record label info)" */
 }
-
-
 
 /* Modify Spinitron Defaults */
 
@@ -166,17 +165,67 @@ nav > ul > li > a::before {
      Disable social share menu */
 }
 
-html body.public.show.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page div.head.show div.image img,
-html body.public.dj.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page div.head.persona div.image {
+html
+  body.public.show.vsc-initialized
+  div.spinitron-page-container
+  div.main-container
+  div.main.wrapper.clearfix
+  div.view-page
+  div.head.show
+  div.image
+  img,
+html
+  body.public.dj.vsc-initialized
+  div.spinitron-page-container
+  div.main-container
+  div.main.wrapper.clearfix
+  div.view-page
+  div.head.persona
+  div.image {
   align-self: center;
   /* Align show images vertically in head show container */
 }
 
-html body.public.station.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page div.head.station div.image,
-html body.public.show.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page div.head.station div.image,
-html body.public.dj.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page div.head.station div.image,
-html body.public.pl.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page div.head.station div.image,
-html body.public.calendar.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page div.head.station div.image {
+html
+  body.public.station.vsc-initialized
+  div.spinitron-page-container
+  div.main-container
+  div.main.wrapper.clearfix
+  div.view-page
+  div.head.station
+  div.image,
+html
+  body.public.show.vsc-initialized
+  div.spinitron-page-container
+  div.main-container
+  div.main.wrapper.clearfix
+  div.view-page
+  div.head.station
+  div.image,
+html
+  body.public.dj.vsc-initialized
+  div.spinitron-page-container
+  div.main-container
+  div.main.wrapper.clearfix
+  div.view-page
+  div.head.station
+  div.image,
+html
+  body.public.pl.vsc-initialized
+  div.spinitron-page-container
+  div.main-container
+  div.main.wrapper.clearfix
+  div.view-page
+  div.head.station
+  div.image,
+html
+  body.public.calendar.vsc-initialized
+  div.spinitron-page-container
+  div.main-container
+  div.main.wrapper.clearfix
+  div.view-page
+  div.head.station
+  div.image {
   display: none;
   /* Hide logo for now */
 }
@@ -209,7 +258,7 @@ div.head:nth-child(1) {
   /* Center header section */
 }
 
-div.head:nth-child(1)>div:nth-child(1) {
+div.head:nth-child(1) > div:nth-child(1) {
   flex-direction: column;
   display: flex;
   /* Allow for reordering the header stack of elements */
@@ -225,12 +274,12 @@ div.head:nth-child(1)>div:nth-child(1) {
   /* (We don't display one, but if we did, it should go here) */
 }
 
-div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(3) {
+div.head:nth-child(1) > div:nth-child(1) > nav:nth-child(3) {
   order: 3;
   /* Calendar and website url below station name */
 }
 
-.view-page .head nav>ul>li:not(:first-child)::before {
+.view-page .head nav > ul > li:not(:first-child)::before {
   content: "- ";
   /* Seperator between "calendar" and "wbor.org" */
 }
@@ -245,8 +294,6 @@ div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(3) {
   /* Hide ark play button in list of recent shows at bottom of homepage */
 }
 
-
-
 /* Show Info & Display on Different Pages */
 
 .show-schedule {
@@ -260,7 +307,7 @@ div.head:nth-child(1)>div:nth-child(1)>nav:nth-child(3) {
   /* On persona pages: remove bullet point before personal details and make alignment not inset */
 }
 
-.head.persona>div> :nth-child(n+5) {
+.head.persona > div > :nth-child(n + 5) {
   margin-top: 0.333rem;
   /* Add spacing between persona bio paragraphs */
 }
@@ -278,7 +325,7 @@ div.description:empty {
      isn't a description there isn't a need to pad below (since it is already handled by container padding) */
 }
 
-.description p:nth-child(n+2) {
+.description p:nth-child(n + 2) {
   padding-top: 0.333rem;
   /* Add spacing between description paragraphs */
 }
@@ -311,7 +358,7 @@ div.description:empty {
 .description img {
   max-height: 225px;
   width: auto;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   /* Enforce limits on DJ-uploaded photos */
 }
 
@@ -322,9 +369,9 @@ div.description:empty {
   /* H4 used elsewhere is for different effect */
 }
 
-.show-block.onair>h4,
-.playlist-block.onair>h4,
-.playlist-block.justended>h4 {
+.show-block.onair > h4,
+.playlist-block.onair > h4,
+.playlist-block.justended > h4 {
   margin-bottom: 0.666rem !important;
   /* Create seperation so "On air" and "Just ended" doesn't blend into the show title/info block */
 }
@@ -334,22 +381,20 @@ table.table-bordered.table-narrow {
   /* Table of upcoming and recent shows already has built in padding/margin */
 }
 
-.show-block.onair>h4,
-.playlist-block.onair>h4 {
-  text-shadow: 0rem 0rem 0.75rem #F00,
-    0rem 0rem 0.75rem #F00;
+.show-block.onair > h4,
+.playlist-block.onair > h4 {
+  text-shadow: 0rem 0rem 0.75rem #f00, 0rem 0rem 0.75rem #f00;
   background-color: rgba(255, 0, 0, 0.161);
-  border-color: #A80000;
+  border-color: #a80000;
   border-style: solid;
   border-width: 0.07rem;
   border-radius: 0.5rem;
   text-align: center;
   padding: 0.333rem;
   width: fit-content;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   text-transform: uppercase;
-  box-shadow: 0rem 0rem 1rem #F00,
-    0rem 0rem 0.5rem #F00;
+  box-shadow: 0rem 0rem 1rem #f00, 0rem 0rem 0.5rem #f00;
   animation: pulse 3s infinite alternate;
   /* Fun "On air" shadow and box */
 }
@@ -357,13 +402,11 @@ table.table-bordered.table-narrow {
 /* Keyframes for pulsating effect */
 @keyframes pulse {
   0% {
-    box-shadow: 0rem 0rem 0.25rem #F00,
-      0rem 0rem 0.125rem #F00;
+    box-shadow: 0rem 0rem 0.25rem #f00, 0rem 0rem 0.125rem #f00;
   }
 
   100% {
-    box-shadow: 0rem 0rem 1rem #F00,
-      0rem 0rem 0.5rem #F00;
+    box-shadow: 0rem 0rem 1rem #f00, 0rem 0rem 0.5rem #f00;
   }
 }
 
@@ -387,12 +430,12 @@ table.table-bordered.table-narrow {
      align-items: center in case of no description or such */
 }
 
-.show-block.onair>.head.show,
-.show-block.onair>.head.playlist,
-.playlist-block.onair>.head.show,
-.playlist-block.onair>.head.playlist,
-.playlist-block.justended>.head.show,
-.playlist-block.justended>.head.playlist {
+.show-block.onair > .head.show,
+.show-block.onair > .head.playlist,
+.playlist-block.onair > .head.show,
+.playlist-block.onair > .head.playlist,
+.playlist-block.justended > .head.show,
+.playlist-block.justended > .head.playlist {
   background: initial;
   padding: initial;
   border-radius: initial;
@@ -407,18 +450,16 @@ table.table-bordered.table-narrow {
   /* Remove the blank Ark player button cell to prevent it from creating extra spacing */
 }
 
-
-
 /* Playlist Block */
 
-.table-striped>tbody:nth-child(1) {
+.table-striped > tbody:nth-child(1) {
   background: #333435;
   padding: 0.5rem;
   border-radius: 0.5rem;
   /* Add background to the table body, padding, and round corners */
 }
 
-.table-striped tr:nth-child(2n+1) {
+.table-striped tr:nth-child(2n + 1) {
   background-color: inherit;
   /* Continuing the work from above:
      Override default alternating spin background color changes (and make uniform
@@ -427,7 +468,7 @@ table.table-bordered.table-narrow {
 
 table {
   border-collapse: separate;
-  border-spacing: 0 .5em;
+  border-spacing: 0 0.5em;
   /* Add spacing between spins */
 }
 
@@ -436,15 +477,19 @@ table {
   /* Give spacing between Apple Music/Spotify buttons and line above */
 }
 
-[id^="sp-"]>td:nth-child(3)>div:nth-child(3)>ul:nth-child(2)>li:nth-child(2) {
+[id^="sp-"]
+  > td:nth-child(3)
+  > div:nth-child(3)
+  > ul:nth-child(2)
+  > li:nth-child(2) {
   display: none;
   /* Remove Amazon button from between Apple Music & Spotify */
 }
 
 .table-bordered td,
 .table-bordered th {
-  border-top: 0px solid #A8A8A8;
-  border-bottom: 0px solid #A8A8A8;
+  border-top: 0px solid #a8a8a8;
+  border-bottom: 0px solid #a8a8a8;
   /* Remove dividing lines between spins */
 }
 
@@ -466,8 +511,8 @@ table {
 body.public .table td {
   vertical-align: middle;
   /* Align spin time to center of album art vertically */
-  padding-left: .6em;
-  padding-right: .6em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
   /* Add more spacing between table items than default (0.3em) */
 }
 
@@ -491,7 +536,7 @@ tr[id^="sp-"] td.spin-time {
   width: 5rem;
   height: 5rem;
   /* Remove border and make art larger */
-  background: #EEE;
+  background: #eee;
   border-radius: 0.5rem;
   /* Rounding only visible if no image sitting above it */
   /* Add default background for icon to sit on (in case of no art) */
@@ -509,16 +554,16 @@ tr[id^="sp-"] td.spin-time {
 }
 
 .spin-player.active {
-  background: hsla(0, 0%, 100%, .6);
+  background: hsla(0, 0%, 100%, 0.6);
   /* Don't remove background while buffering */
 }
 
 .spin-player.active.playing {
   display: flex;
   /* Fix issue where pause icon isn't vertically aligned in middle */
-  background: hsla(0, 0%, 100%, .6);
+  background: hsla(0, 0%, 100%, 0.6);
   /* Add back frosted overlay while playing */
-  transition: .3s ease;
+  transition: 0.3s ease;
   /* Fade out background when done playing */
 }
 
@@ -549,8 +594,7 @@ tr[id^="sp-"] td.spin-time {
 }
 
 .local {
-  text-shadow: 0rem 0rem 0.75rem #007cff,
-    0rem 0rem 0.75rem #007cff,
+  text-shadow: 0rem 0rem 0.75rem #007cff, 0rem 0rem 0.75rem #007cff,
     0rem 0rem 0.75rem #007cff;
   white-space: nowrap;
   padding: 0.5rem;
@@ -558,9 +602,8 @@ tr[id^="sp-"] td.spin-time {
 }
 
 .new {
-  text-shadow: 0rem 0rem 0.75rem #F00,
-    0rem 0rem 0.75rem #F00,
-    0rem 0rem 0.75rem #F00;
+  text-shadow: 0rem 0rem 0.75rem #f00, 0rem 0rem 0.75rem #f00,
+    0rem 0rem 0.75rem #f00;
   white-space: nowrap;
   margin-left: 0.5rem;
   /* Decorate "New Release" text */
@@ -597,8 +640,6 @@ tr[id^="sp-"] td.spin-time {
   /* Not sure what this was but it was adding padding above the list of past show playlists */
 }
 
-
-
 /* Coming Up */
 .show-time {
   text-align: center;
@@ -624,7 +665,13 @@ tr[id^="sp-"] td.spin-time {
   /* Add margin below DJ bio & related info, and align center for case where there is no info or bio */
 }
 
-html body.public.dj.vsc-initialized div.spinitron-page-container div.main-container div.main.wrapper.clearfix div.view-page h4 {
+html
+  body.public.dj.vsc-initialized
+  div.spinitron-page-container
+  div.main-container
+  div.main.wrapper.clearfix
+  div.view-page
+  h4 {
   text-align: center;
   /* Center "{PERSON's} previous playlists" */
 }
@@ -665,13 +712,11 @@ html body.public.dj.vsc-initialized div.spinitron-page-container div.main-contai
     white-space: nowrap;
     max-width: 132px;
     overflow: clip;
-    text-overflow: ellipsis
+    text-overflow: ellipsis;
   }
 
   /* Keep past playlists all on one line on mobile */
 }
-
-
 
 /* Calendar Page */
 
@@ -682,7 +727,7 @@ html body.public.dj.vsc-initialized div.spinitron-page-container div.main-contai
 .spin-cal .fc-event.spin-cal-pl,
 .spin-cal .fc-event.spin-cal-show {
   background-color: #afafaf;
-  border-color: #0E1111;
+  border-color: #0e1111;
 }
 
 .spin-cal__datepicker,
@@ -735,7 +780,6 @@ html body.public.dj.vsc-initialized div.spinitron-page-container div.main-contai
 }
 
 @media (max-width: 560px) {
-
   .spin-cal .fc-left,
   .spin-cal .fc-right {
     flex-basis: 50%;
@@ -744,8 +788,6 @@ html body.public.dj.vsc-initialized div.spinitron-page-container div.main-contai
   /* Override default of 100% which allows left/right button and week/day to
      sit on the same line */
 }
-
-
 
 /* Ark Player */
 
@@ -759,8 +801,8 @@ html body.public.dj.vsc-initialized div.spinitron-page-container div.main-contai
 .ark-player {
   margin-bottom: 1em;
   /* Add spacing below to match spacing in rest of site */
-  display: flex
-    /* Centers player, for some reason */
+  display: flex;
+  /* Centers player, for some reason */
 }
 
 #ark-player {
@@ -773,8 +815,8 @@ html body.public.dj.vsc-initialized div.spinitron-page-container div.main-contai
 
 .ark-player__date .select-css,
 .ark-player__time .select-css {
-  background: #EEE;
-  color: #0E1111;
+  background: #eee;
+  color: #0e1111;
   border-radius: 0.5rem;
   /* Match rest of site styling */
 }
