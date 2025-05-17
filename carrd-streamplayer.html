@@ -13,45 +13,4 @@
     >
     </iframe>
   </div>
-  <h2 id="offline-message" class="style11" style="display: none">
-    WBOR is not currently broadcasting (check back later...)
-  </h2>
 </center>
-
-<!-- <script>
-    async function checkStreamStatus() {
-        try {
-            const response = await fetch('https://azura.wbor.org/api/station/2/nowplaying');
-            const data = await response.json();
-            // Relying on the `is_online` field to determine if the stream is live, which is itself
-            // set based on AzuraCast's NowPlaying library. 
-
-            // If $npResult->currentSong->text is empty, the code falls back to offlineApi(), which
-            // will set the station offline and return. This means even if $npResult->meta->online 
-            // is true, having an empty "current song" text causes an early "offline" response.
-
-            // If no Icecast source is connected, the station will be offline. This is the most
-            // common reason for the station to be offline, and is the most reliable way to determine
-            // if the station is offline.
-
-            // `is_online` only comes back online after getting a metadata update from the source.
-            const isLive = data?.is_online;
-
-            if (isLive) {
-                document.getElementById('streamplayer').style.display = 'flex';
-                document.getElementById('offline-message').style.display = 'none';
-            } else {
-                document.getElementById('streamplayer').style.display = 'none';
-                document.getElementById('offline-message').style.display = 'block';
-            }
-        } catch (error) {
-            console.error('Error fetching stream status:', error);
-        }
-    }
-
-    // Initial check
-    checkStreamStatus();
-
-    // Check every 5 seconds
-    setInterval(checkStreamStatus, 5000);
-</script> -->
